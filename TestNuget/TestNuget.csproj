@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>IziHardGames.IziDummyNuget</PackageId>
+    <Company>IziHardGames</Company>
+    <Author>Tran Ngoc Anh</Author>
+    <Version>1.0.0</Version>
+    <PackageDescription>Some Dummy Package</PackageDescription>
+    <Title></Title>
+    <PackageTags>Microsoft Azure Storage Blobs;Microsoft;Azure;Blobs;Blob;Storage;StorageScalable</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+</Project>
