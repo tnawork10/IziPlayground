@@ -2,7 +2,6 @@
 using Moq;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Builder;
-using IziHardGames.TestNuget;
 
 // See https://aka.ms/new-console-template for more information
 
