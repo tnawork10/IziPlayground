@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IziPlayGround.Server", "Izi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickTest", "QuickTest\QuickTest.csproj", "{0E6B40B8-DBC2-49DA-A1A9-2FD9750493C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNuget", "TestNuget\TestNuget.csproj", "{47E36695-2994-476E-B7F3-0CDECE4DE6DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestNuget", "TestNuget\TestNuget.csproj", "{47E36695-2994-476E-B7F3-0CDECE4DE6DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{59631D35-CE44-4A38-8BD3-0110F7B831EE}"
 EndProject
