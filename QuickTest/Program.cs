@@ -6,7 +6,7 @@ using IziHardGames.TestNuget;
 
 // See https://aka.ms/new-console-template for more information
 
- if(Enumerable.Range(0, 2).Contains(2))
+if(Enumerable.Range(0, 2).Contains(2))
  {
         Console.WriteLine("Fire");
  }
