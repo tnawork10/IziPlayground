@@ -5,7 +5,6 @@ namespace IziHardGames.IziAsyncEnumerables;
 
 public class AsyncEnumerable<T> : IAsyncEnumerable<T>
 {
-    private T value;
     private readonly ManualResetValueTaskSource<T> taskSource = new ManualResetValueTaskSource<T>();
 
     public async IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken ct = default)
@@ -14,7 +13,7 @@ public class AsyncEnumerable<T> : IAsyncEnumerable<T>
         {
             var result = await taskSource.GetTask().ConfigureAwait(false);
             taskSource.Reset();
-            yield return value;
+            yield return result;
         }
     }
 
