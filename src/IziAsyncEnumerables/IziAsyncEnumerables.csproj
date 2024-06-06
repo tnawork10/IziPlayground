@@ -4,6 +4,6 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <RootNamespace>IziHardGames.Playgrounds.ForAsyncEnumerables</RootNamespace>
-        <ProjectGuid></ProjectGuid>
+        <ProjectGuid>{4D2F16FF-181C-4697-8A75-4213B63F7756}</ProjectGuid>
     </PropertyGroup>
 </Project>
