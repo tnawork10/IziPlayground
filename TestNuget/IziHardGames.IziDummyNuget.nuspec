@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+    <metadata>
+        <id>IziHardGames.IziDummyNuget</id>
+        <version>1.1.0</version>
+        <authors>Author Name</authors>
+        <owners>IziHardGames; Tran Ngoc Anh</owners> <!-- Informational only -->
+        <description>A description of the package</description>
+        <tags>tag1 tag2</tags>
+        <license type="expression">MIT</license>
+        <projectUrl>https://github.com/username/repo</projectUrl>
+        <icon>icon.png</icon>
+    </metadata>
+</package> 
