@@ -1,0 +1,21 @@
+{
+    // "launchSettingsFilePath": "IziPlayGround.Server/Properties/launchSettings.json",
+    // "launchSettingsProfile": "https",
+
+    "configurations": [
+        
+        {
+            "name": "C#: Playground.AspNetCore.MVC",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\src\\Playground.AspNetCore.MVC\\Playground.AspNetCore.MVC.csproj",
+        },
+        {
+            "name": "C#: QuickTest",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}\\QuickTest\\QuickTest.csproj",
+            "launchConfigurationId": "TargetFramework=;QuickTest"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-﻿namespace IziHardGames.TestNuget
+﻿namespace IziHardGames.Playgrounds.ForNuget.Publishing
 {
 
     public class IziDummyNuget

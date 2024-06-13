@@ -2,6 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ProjectGuid></ProjectGuid>
+    <RootNamespace>IziHardGames.Playgrounds.ForNuget.Publishing</RootNamespace>
     <Nullable>enable</Nullable>
     <PackageId>IziHardGames.IziDummyNuget</PackageId>
     <Company>IziHardGames</Company>
