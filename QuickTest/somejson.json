@@ -1,0 +1,20 @@
+{
+    "Entrypoint": [
+        "./application"
+    ],
+    "Env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "TZ=Europe/Moscow"
+    ],
+    "ExposedPorts": {
+        "3333/tcp": {},
+        "50051/tcp": {}
+    },
+    "Labels": {
+        "com.docker.compose.project": "plc-reader",
+        "com.docker.compose.service": "link",
+        "com.docker.compose.version": "2.27.0"
+    },
+    "User": "root:root",
+    "WorkingDir": "/"
+}
