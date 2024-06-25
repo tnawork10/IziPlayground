@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EFCore\EFCore.csproj" />
     <ProjectReference Include="..\src\IziAsyncEnumerables\IziAsyncEnumerables.csproj" />
+    <ProjectReference Include="..\src\UnsafE\Unsafe.csproj" />
   </ItemGroup>
 
 </Project>

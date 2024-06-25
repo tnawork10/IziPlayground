@@ -1,0 +1,7 @@
+  services:
+      adminer:
+        image: harbor.umnogor.ru/base_images/adminer:4.8.0
+        restart: always
+        container_name: adminer
+        ports:
+          - "8000:8080"
