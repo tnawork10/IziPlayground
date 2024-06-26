@@ -45,4 +45,7 @@
             <PackagePath>icon.ico</PackagePath> <!-- Path in the package -->
         </None>
     </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="ChanIvan.Stroyplatforma.DevTools" Version="1.0.0"/>
+    </ItemGroup>
 </Project>

@@ -1,0 +1,32 @@
+{
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "ValueAsStringNull": "8a53a05d-8bde-438c-98fe-a4c72d9a1496",
+    "ValueAsString": "bd3f0956-c342-493c-948a-901285ce1e29",
+    "ValueAsLong": 0,
+    "NestedModel0": {
+      "NestedModelId": 0,
+      "NestedModel1": {
+        "NestedModel1Id": "78635e83-ba43-427d-a751-61a361081310",
+        "ValueAsFloat": 0,
+        "ValueAsIntNull": 0,
+        "NestedNull": {
+          "NestedModel2Id": 0
+        },
+        "NestedRequired": {
+          "NestedModel2Id": 0
+        }
+      }
+    },
+    "NestedModel2s": [
+      {
+        "NestedModel2Id": 0
+      },
+      {
+        "NestedModel2Id": 0
+      },
+      {
+        "NestedModel2Id": 0
+      }
+    ]
+  }
+  
