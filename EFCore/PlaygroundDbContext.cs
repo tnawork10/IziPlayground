@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,8 @@ namespace IziHardGames.Playgrounds.ForEfCore
         public DbSet<Model2> Models2 { get; set; }
         public DbSet<ModelA> ModelsA { get; set; }
         public DbSet<ModelB> ModelsB { get; set; }
+
+        public static int counter;
 
         //public PlaygroundDbContext(DbContextOptions<PlaygroundDbContext> options) : base(options)
         //{
@@ -74,9 +77,19 @@ namespace IziHardGames.Playgrounds.ForEfCore
                 },
                 ModelB = new ModelB()
                 {
-                    Name = DateTime.Now.ToString()
+                    Name = DateTime.Now.ToString(),
+                    KeyCounter = (++counter).ToString(),
                 },
             };
+        }
+
+        public static async Task RecreateAsync()
+        {
+            using var context = new PlaygroundDbContext();
+            await context.Database.EnsureDeletedAsync();
+            await context.Database.EnsureCreatedAsync();
+            context.Models0.Add(CreateModel0());
+            await context.SaveChangesAsync();
         }
     }
 
@@ -113,9 +126,11 @@ namespace IziHardGames.Playgrounds.ForEfCore
         public int Id { get; set; }
     }
 
+    [Index(nameof(KeyCounter), IsUnique = true)]
     public class ModelB
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
+        public string KeyCounter { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Unsafe
+﻿using System.Runtime.CompilerServices;
+
+namespace IziHardGames.ForUnsafe
 {
     public unsafe class StackListTests
     {
@@ -13,8 +15,8 @@
             ref var refVar = ref list.ValueByRef;
 
             Console.WriteLine(refVar.val);
-    
 
+            //Unsafe.alloc
 
         }
     }
@@ -94,7 +96,7 @@
                     Add(&element, values, index + 1, predictate);
                 }
                 //values.GetEnumerator<T>();
-                throw new System.NotImplementedException();
+                throw new NotImplementedException();
             }
         }
         public void Add(in IEnumerator<T> etor, StackList<T> previous, Func<T, bool> predictate)
@@ -113,7 +115,7 @@
         public StackList<T>* GoTo(int index)
         {
             if (index > this.index) throw new ArgumentOutOfRangeException($"Current index is: {this.index}. recieved: {index.ToString()}");
-            var pointer = this.previousElement;
+            var pointer = previousElement;
             for (int i = 0; i < index; i++)
             {
                 pointer = pointer->previousElement;
@@ -134,7 +136,7 @@
             {
                 return null;
             });
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
 
@@ -159,7 +161,7 @@
                     if (item.BaseType != null)
                     {
                         Recursive(default, item.BaseType);
-                        throw new System.NotImplementedException();
+                        throw new NotImplementedException();
                     }
                 }
             }
@@ -167,12 +169,18 @@
 
         private static void Foreach(int index, T[] values, StackList<T> list)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
         private static void Chain(ref IEnumerator<T> enumerator, StackList<T> list)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
+        public static void ToArray()
+        {
+            // когда заранее не известен размер количества объектов удовлетворяющих выборке.
+            // Выборка проходит по всей послежовательности и на последнем элементе создается массив длиною равною счетчику.
+            // затем  идет заполнение массива из хвоста
+        }
     }
 }
