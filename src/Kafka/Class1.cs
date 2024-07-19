@@ -12,7 +12,7 @@ public class Class1
 {
         public async Task Run()
         {
-            var str = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fffffff")
+            var str = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fffffff");
             var config = new StreamConfig<StringSerDes, StringSerDes>();
             config.ApplicationId = "test-app";
             config.BootstrapServers = "localhost:9092";
