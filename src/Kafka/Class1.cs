@@ -8,8 +8,8 @@ using Streamiz.Kafka.Net;
 
 namespace Kafka
 {
-    public class Class1
-    {
+public class Class1
+{
         public async Task Run()
         {
             var str = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss.fffffff")

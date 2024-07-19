@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Nodes;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Text.Json.Nodes;
 using IziHardGames.IziAsyncEnumerables;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
@@ -10,13 +12,18 @@ using IziHardGames.ForUnsafe;
 
 namespace QuickTest;
 
+if(Enumerable.Range(0, 2).Contains(2))
+ {
+        Console.WriteLine("Fire");
+ }
+Console.WriteLine("Hello, World!");
+JsonArray obj = JsonObject.Parse(json).AsArray();
 
-public class Program
+foreach (var VARIABLE in obj)
 {
-    static async Task Main(params string[] arg)
-    {
-
-        //await PlaygroundDbContext.RecreateAsync();
-        await CheckDbCommands.Check();
-    }
+    Console.WriteLine(VARIABLE["hardwareId"].GetValue<long>());
+    Console.WriteLine(VARIABLE["signalId"].GetValue<long>());
 }
+
+
+Console.WriteLine("Complete");

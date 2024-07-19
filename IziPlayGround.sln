@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		dotcover.config.xml = dotcover.config.xml
 		nuget.config = nuget.config
 		README.md = README.md
+		csc.rsp = csc.rsp
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.AspNetCore.MVC", "src\Playground.AspNetCore.MVC\Playground.AspNetCore.MVC.csproj", "{AC42A5A4-2966-4949-BE97-0F5B84290947}"
@@ -35,6 +36,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unsafe", "src\UnsafE\Unsafe.csproj", "{D05FF268-5F69-49B1-B0B0-A269EB8B01EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerExample", "SwaggerExample\SwaggerExample.csproj", "{DFBB9D2E-7821-4182-BD66-2EC6D3FACD7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResearchBuildPaths", "ResearchBuildPaths\ResearchBuildPaths.csproj", "{EBDFF7DC-2762-404E-83C7-B7C9AC97F792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

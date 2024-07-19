@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>IziHardGames.Playgrounds.ResearchBuildPaths</RootNamespace>
+        <ProjectGuid>{EBDFF7DC-2762-404E-83C7-B7C9AC97F792}</ProjectGuid>
+        <BaseIntermediateOutputPath>obbj</BaseIntermediateOutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1"/>
+    </ItemGroup>
+
+    <Target Name="PrintBaseOutputPath" AfterTargets="Build">
+        <Message Text="OutputPath: $(OutputPath)" Importance="High"/>
+        <Message Text="BaseOutputPath: $(BaseOutputPath)" Importance="High"/>
+        <Message Text="BaseIntermediateOutputPath: $(BaseIntermediateOutputPath)" Importance="High"/>
+        <Message Text="IntermediateOutputPath: $(IntermediateOutputPath)" Importance="High"/>
+        <Message Text="MSBuildProjectExtensionsPath: $(MSBuildProjectExtensionsPath)" Importance="High"/>
+        <Message Text="Platform: $(Platform)" Importance="High"/>
+        <Message Text="PlatformTarget: $(PlatformTarget)" Importance="High"/>
+        <Message Text="TargetFramework: $(TargetFramework)" Importance="High"/>
+    </Target>
+</Project>
