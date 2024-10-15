@@ -11,7 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IziHardGames.IziDummyNuget" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
     <PackageReference Include="Moq" Version="4.20.70" />
   </ItemGroup>
@@ -22,4 +21,7 @@
     <ProjectReference Include="..\src\UnsafE\Unsafe.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
 </Project>
