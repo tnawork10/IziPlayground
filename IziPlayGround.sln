@@ -46,7 +46,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Http", "libs\Asp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "src\WebAPI\WebAPI.csproj", "{26E56A5E-7327-4C31-967C-E296754C109E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchBcl", "benchs\BenchBcl\BenchBcl.csproj", "{9B09B6DB-CF0B-4B3F-A862-82CA23975BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchBcl", "benchs\BenchBcl\BenchBcl.csproj", "{9B09B6DB-CF0B-4B3F-A862-82CA23975BB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DmlEfCoreExplore", "src\asp.net\DmlEfCoreExplore\DmlEfCoreExplore.csproj", "{2705895B-A824-4A40-AACF-CB266384E64A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -106,6 +108,10 @@ Global
 		{9B09B6DB-CF0B-4B3F-A862-82CA23975BB0}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{9B09B6DB-CF0B-4B3F-A862-82CA23975BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B09B6DB-CF0B-4B3F-A862-82CA23975BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2705895B-A824-4A40-AACF-CB266384E64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2705895B-A824-4A40-AACF-CB266384E64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2705895B-A824-4A40-AACF-CB266384E64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2705895B-A824-4A40-AACF-CB266384E64A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{8CE08C76-66B9-42CB-B62D-B51AFBA14604} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{26E56A5E-7327-4C31-967C-E296754C109E} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{9B09B6DB-CF0B-4B3F-A862-82CA23975BB0} = {9472F8D2-00AA-45D1-9066-C2D348C8E839}
+		{2705895B-A824-4A40-AACF-CB266384E64A} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}
