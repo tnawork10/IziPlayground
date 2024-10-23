@@ -88,5 +88,11 @@ namespace IziPlayGround.Server.Controllers
             await context.SaveChangesAsync();
             return Ok(v);
         }
+        [HttpPost("GetSpan")]
+
+        public async Task<IActionResult> GetSpan()
+        {
+            return Ok((new int[] { 0, 1, 2, 3, 5, 6 }));
+        }
     }
 }

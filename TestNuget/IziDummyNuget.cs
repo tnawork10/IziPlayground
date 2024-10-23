@@ -1,6 +1,4 @@
-﻿using Stroyplatforma.TestLibs.ValueGenerators;
-
-namespace IziHardGames.TestNuget
+﻿namespace IziHardGames.TestNuget
 {
     public class IziDummyNuget
     {
