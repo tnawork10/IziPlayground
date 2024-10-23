@@ -1,6 +1,7 @@
 
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
+using WebAPI.ActionFilters;
 using WebAPI.Middlewares;
 
 namespace WebAPI
@@ -22,7 +23,7 @@ namespace WebAPI
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(x => x.Filters.Add<DisposableActionFilter>());
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

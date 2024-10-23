@@ -84,7 +84,7 @@ namespace IziPlayGround.Server.Controllers
         public async Task<IActionResult> Save()
         {
             var v = await context.Hierarchies.FindAsync(guid);
-            context.Hierarchies.Add(v);
+            context.Hierarchies.Update(v);
             await context.SaveChangesAsync();
             return Ok(v);
         }

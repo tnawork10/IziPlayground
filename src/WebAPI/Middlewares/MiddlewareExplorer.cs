@@ -12,9 +12,13 @@ namespace WebAPI.Middlewares
             _next = next;
         }
 
-        public Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context)
         {
-            return _next(context);
+            Console.WriteLine("Middleware before invoke");
+            // before request
+            await _next(context);
+            // after request
+            Console.WriteLine("Middleware after invoke");
         }
     }
 }
