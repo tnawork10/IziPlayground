@@ -25,4 +25,9 @@ namespace IziHardGames.Playgrounds.ForEfCore
         [JsonIgnore] public EntityHierarchy? Parent { get; set; }
         public ICollection<EntityHierarchy>? Childs { get; set; }
     }
+
+    public class EntityHierarchyWithPostgresHierarchyId
+    {
+        
+    }
 }
