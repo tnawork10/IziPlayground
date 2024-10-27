@@ -50,9 +50,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchBcl", "benchs\BenchBcl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DmlEfCoreExplore", "src\asp.net\DmlEfCoreExplore\DmlEfCoreExplore.csproj", "{2705895B-A824-4A40-AACF-CB266384E64A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCoreQuery", "src\asp.net\EfCoreQuery\EfCoreQuery.csproj", "{4356477C-BC6A-4D30-89ED-140A1E0BA0AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCoreQuery", "src\asp.net\EfCoreQuery\EfCoreQuery.csproj", "{4356477C-BC6A-4D30-89ED-140A1E0BA0AD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "efcore", "efcore", "{BBA16AA2-4CCE-4816-9CEB-637C1FF46119}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "refs", "refs", "{C8FC319E-9F2A-4A49-B749-42990322983D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IziTracings", "..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj", "{59DF4CFF-035E-4548-BAAD-8B4A7EAC4FB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,6 +124,10 @@ Global
 		{4356477C-BC6A-4D30-89ED-140A1E0BA0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4356477C-BC6A-4D30-89ED-140A1E0BA0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4356477C-BC6A-4D30-89ED-140A1E0BA0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DF4CFF-035E-4548-BAAD-8B4A7EAC4FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DF4CFF-035E-4548-BAAD-8B4A7EAC4FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DF4CFF-035E-4548-BAAD-8B4A7EAC4FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DF4CFF-035E-4548-BAAD-8B4A7EAC4FB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +146,7 @@ Global
 		{2705895B-A824-4A40-AACF-CB266384E64A} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{4356477C-BC6A-4D30-89ED-140A1E0BA0AD} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{BBA16AA2-4CCE-4816-9CEB-637C1FF46119} = {59631D35-CE44-4A38-8BD3-0110F7B831EE}
+		{59DF4CFF-035E-4548-BAAD-8B4A7EAC4FB4} = {C8FC319E-9F2A-4A49-B749-42990322983D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

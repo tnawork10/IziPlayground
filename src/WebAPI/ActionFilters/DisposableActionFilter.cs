@@ -16,7 +16,10 @@ namespace WebAPI.ActionFilters
                 {
 
                 }
-                (v as SomeDisposable).SomeValue = 500;
+                if (v is SomeDisposable sd)
+                {
+                    sd.SomeValue = 500;
+                }
             }
             Console.WriteLine();
         }
@@ -31,7 +34,10 @@ namespace WebAPI.ActionFilters
                 {
 
                 }
-                (v as SomeDisposable).SomeValue = 1000;
+                if (v is SomeDisposable sd)
+                {
+                    sd.SomeValue = 1000;
+                }
             }
         }
     }
