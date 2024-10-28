@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using Dapper;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using Npgsql;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,10 +18,12 @@ namespace EfCoreQuery.Controllers
     public class EFLeftJoinController : ControllerBase
     {
         private QueryDbContext context;
+        private NpgsqlConnectionStringBuilder csBuilder;
 
-        public EFLeftJoinController(QueryDbContext context)
+        public EFLeftJoinController(QueryDbContext context, NpgsqlConnectionStringBuilder csBuilder)
         {
             this.context = context;
+            this.csBuilder = csBuilder;
         }
 
         [HttpPost(nameof(GetLeftJoin10To20))]
@@ -165,6 +171,8 @@ namespace EfCoreQuery.Controllers
                 IdPart1 = x.IdPart1,
                 IdPart2 = x.IdPart2,
             }).AsQueryable();
+            var anonAsArray = range.Select(x => new { x.IdPart1, x.IdPart2 }).ToArray();
+            var objsAsArrat = range.ToArray();
 
             //var q = context.CompositeKeyJoins.Where(x => e2sKeys.Contains(new { x.IdPart1, x.IdPart2 }));    // error
 
@@ -252,11 +260,36 @@ namespace EfCoreQuery.Controllers
                 var v24 = context.CompositeKeyJoins.Where(x => e2sKeys.Any(x => x == new { x.IdPart1, x.IdPart2 })); // error
             }
 
-            var v25 = context.CompositeKeyJoins.Where(x => );
+            //var v25 = context.CompositeKeyJoins.Where(x => );
 
+            var keys = new List<(int, int)>() { (2, 2), (4, 4) };
+            var hashset = new List<(int, int)>() { (2, 2), (4, 4) }.Select(x => new { x.Item1, x.Item2 }).ToHashSet();
+            var keysAsAnon = new List<TypeCompositeKeyObj>() { new TypeCompositeKeyObj() { IdPart1 = 5, IdPart2 = 5 }, new TypeCompositeKeyObj() { IdPart1 = 4, IdPart2 = 4 } };
+
+            if (false)
+            {   // 
+                //var vv = await context.CompositeKeyJoins.Where(x => keys.Any(y => y.Item1 == x.IdPart1 && y.Item2 == x.IdPart2)).ToArrayAsync(); // error
+                //var vv = await context.CompositeKeyJoins.Where(x => keysAsAnon.Any(y => y.IdPart1 == x.IdPart1 && y.IdPart2 == x.IdPart2)).ToArrayAsync(); // error
+            }
+            //var vv = await context.CompositeKeyJoins.Where(x => hashset.Contains(new(x.IdPart1, x.IdPart2))).ToArrayAsync(); //  error
+            //var vv = await context.CompositeKeyJoins.Where(x => hashset.Contains(new { Item1 = x.IdPart1, Item2 = x.IdPart2 })).ToArrayAsync(); // error
+
+
+            //var q = context.CompositeKeyJoins.Select(x => new { Key = new { x.IdPart1, x.IdPart2 }, Val = x.Value }).Join(e2sKeys, x => x.Key, y => y, (x, y) => new { x, y }); // error
+            //var q = context.CompositeKeyJoins.AsQueryable().LeftJoin(e2sKeys, x => ValueTuple.Create(x.IdPart1, x.IdPart2), y => ValueTuple.Create(y.IdPart1, y.IdPart2), (x, y) => x); // error
+            var tuple = ValueTuple.Create(5, 5);
+            var arrOfTuple = new ValueTuple<int, int>[] { tuple };
+            //var tuple1 = context.CompositeKeyJoins.Where(x => x.IdPart1 == tuple.Item1 && x.IdPart2 == tuple.Item2).FirstOrDefault(); // ok
+            //var tuple2 = context.CompositeKeyJoins.Where(x => arrOfTuple.Any(z => z.Item1 == x.IdPart1 && z.Item2 == x.IdPart2)).FirstOrDefault(); // error
+            //var tuple3 = context.CompositeKeyJoins.Where(x => arrOfTuple.Contains(ValueTuple.Create(x.IdPart1, x.IdPart2))).FirstOrDefault(); // error
+            var tuple4 = context.CompositeKeyJoins.Where(x => objsAsArrat.Any(y => y.IdPart1 == x.IdPart1 && y.IdPart2 == x.IdPart2)).FirstOrDefault(); // error
+
+
+            //return Ok(vv);
+            //return Ok(await q.ToArrayAsync());
             //return Ok(q);
             //return Ok(await query.ToArrayAsync());
-            return Ok(await v23.ToArrayAsync());
+            //return Ok(await v23.ToArrayAsync());
             //return Ok(result);
             return NoContent();
         }
@@ -275,6 +308,30 @@ namespace EfCoreQuery.Controllers
             return Ok();
         }
 
+        [HttpPost(nameof(DapperQuery))]
+
+        public async Task<IActionResult> DapperQuery()
+        {
+
+            const string sql = @"SELECT *
+        FROM CompositeKeyJoins
+        WHERE IdPart1 IN (@CompositeKeys);";
+            //var keys = new[] { new TypeCompositeKeyObj { IdPart1 = 5, IdPart2 = 5 } };
+            var keys = new[] { 5, 6, 7 };
+
+
+            // Convert to a structure that Dapper can understand as an array of parameters
+            //var parameterList = compositeKeys.Select(key => new { key.ColumnA, key.ColumnB });
+
+            using (IDbConnection db = new NpgsqlConnection(csBuilder.ConnectionString))
+            {
+                var v = await db.QueryAsync<CompositeKeyJoin>(sql, new
+                {
+                    CompositeKeys = new[] { 5 }
+                });
+                return Ok(v);
+            }
+        }
     }
 
     public static class ExtensionsForIQueryable

@@ -3,6 +3,7 @@ using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
 
 namespace EfCoreQuery
 {
@@ -19,6 +20,9 @@ namespace EfCoreQuery
             var portVal = $";port={port}";
 
             var cs = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=EfCoreQuery";
+
+            var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
+            builder.Services.AddSingleton<NpgsqlConnectionStringBuilder>(npsqlCsb);
             builder.Services.AddDbContextPool<QueryDbContext>(x => x.UseNpgsql(cs));
 
             builder.Services.AddControllers();

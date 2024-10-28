@@ -121,4 +121,10 @@ namespace IziHardGames.Playgrounds.ForEfCore
             return p1.KeyIdPart1 != p2.KeyIdPart1 && p1.KeyIdPart2 != p2.KeyIdPart2;
         }
     }
+
+    public class TypeCompositeKeyObj
+    {
+        public int IdPart1 { get; set; }
+        public int IdPart2 { get; set; }
+    }
 }
