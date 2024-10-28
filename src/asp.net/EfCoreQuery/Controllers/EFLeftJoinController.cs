@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Linq.Expressions;
 using Dapper;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.AspNetCore.Mvc;
@@ -313,11 +312,16 @@ namespace EfCoreQuery.Controllers
         public async Task<IActionResult> DapperQuery()
         {
 
+            Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+            //    const string sql = @"SELECT *
+            //FROM ""CompositeKeyJoins""
+            //WHERE ""IdPart1"" IN (@CompositeKeys);";
+
             const string sql = @"SELECT *
-        FROM CompositeKeyJoins
-        WHERE IdPart1 IN (@CompositeKeys);";
+        FROM composite_key_joins
+        WHERE id_part1 = ANY (@aaa);";
             //var keys = new[] { new TypeCompositeKeyObj { IdPart1 = 5, IdPart2 = 5 } };
-            var keys = new[] { 5, 6, 7 };
+            var keys = new[] { 5 };
 
 
             // Convert to a structure that Dapper can understand as an array of parameters
@@ -325,65 +329,43 @@ namespace EfCoreQuery.Controllers
 
             using (IDbConnection db = new NpgsqlConnection(csBuilder.ConnectionString))
             {
-                var v = await db.QueryAsync<CompositeKeyJoin>(sql, new
+                var q = db.QueryAsync<CompositeKeyJoin>(sql, new
                 {
-                    CompositeKeys = new[] { 5 }
+                    aaa = keys
                 });
-                return Ok(v);
+                return Ok(await q);
             }
         }
-    }
+        [HttpPost(nameof(DapperQueryComplex))]
 
-    public static class ExtensionsForIQueryable
-    {
-        /// <summary>
-        /// Метод разворачивается в where (item[N].TId1 == x.TId1 || where item[N].TId2 == x.TId2) и так на каждый элемент ids
-        /// 
-        /*
-        Bitmap Heap Scan on "CompositeKeyJoins" c  (cost=12.89..23.14 rows=3 width=32)
-          Recheck Cond: ((("IdPart1" = 6) AND ("IdPart2" = 14)) OR (("IdPart1" = 23) AND ("IdPart2" = 9)) OR (("IdPart1" = 94) AND ("IdPart2" = 73)))
-          ->  BitmapOr  (cost=12.89..12.89 rows=3 width=0)
-        ->  Bitmap Index Scan on "PK_CompositeKeyJoins"  (cost=0.00..4.29 rows=1 width=0)
-              Index Cond: (("IdPart1" = 6) AND ("IdPart2" = 14))
-        ->  Bitmap Index Scan on "PK_CompositeKeyJoins"  (cost=0.00..4.29 rows=1 width=0)
-              Index Cond: (("IdPart1" = 23) AND ("IdPart2" = 9))
-        ->  Bitmap Index Scan on "PK_CompositeKeyJoins"  (cost=0.00..4.29 rows=1 width=0)
-              Index Cond: (("IdPart1" = 94) AND ("IdPart2" = 73))
-        */
-        /// </summary>
-        public static IQueryable<T> CompositeFilterP2<T, TId1, TId2>(this IQueryable<T> queriable, IEnumerable<(TId1, TId2)> ids, string propName0, string propName1)
-
+        public async Task<IActionResult> DapperQueryComplex()
         {
-            var parameter = Expression.Parameter(typeof(T));
 
-            var body = ids.Select(b => Expression.AndAlso(
-                Expression.Equal(Expression.Property(parameter, propName0),
-                                 Expression.Constant(b.Item1)),
-                Expression.Equal(Expression.Property(parameter, propName1),
-                             Expression.Constant(b.Item2))))
-            .Aggregate(Expression.OrElse);
+            Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+            //    const string sql = @"SELECT *
+            //FROM ""CompositeKeyJoins""
+            //WHERE ""IdPart1"" IN (@CompositeKeys);";
 
-            var predicate = Expression.Lambda<Func<T, bool>>(body, parameter);
-            return queriable.Where(predicate);
-        }
-        public static IQueryable<T> CompositeFilterP3<T, TId1, TId2, TId3>(this IQueryable<T> queriable, IEnumerable<(TId1, TId2, TId3)> ids, string propName0, string propName1, string propName3)
+            const string sql = @"SELECT *
+        FROM composite_key_joins
+        WHERE (id_part1,id_part2) = ANY (@aaa);";
+        //WHERE (id_part1,id_part2) = ANY (@aaa);"; // error
+            //var keys = new[] { new TypeCompositeKeyObj { IdPart1 = 5, IdPart2 = 5 } };
+            //var keys = new[] { (5, 5) };    // error
+            var keys = new[] { new { id_part1 = 5, id_part2 = 5 } };    // error
 
-        {
-            var parameter = Expression.Parameter(typeof(T));
 
-            var body = ids.Select(b => Expression.AndAlso(Expression.AndAlso(
-                Expression.Equal(Expression.Property(parameter, propName0),
-                                 Expression.Constant(b.Item1)),
-                Expression.Equal(Expression.Property(parameter, propName1),
-                                Expression.Constant(b.Item2))
-                ),
-                 Expression.Equal(Expression.Property(parameter, propName3),
-                                Expression.Constant(b.Item3))
-                ))
-            .Aggregate(Expression.OrElse);
+            // Convert to a structure that Dapper can understand as an array of parameters
+            //var parameterList = compositeKeys.Select(key => new { key.ColumnA, key.ColumnB });
 
-            var predicate = Expression.Lambda<Func<T, bool>>(body, parameter);
-            return queriable.Where(predicate);
+            using (IDbConnection db = new NpgsqlConnection(csBuilder.ConnectionString))
+            {
+                var q = db.QueryAsync<CompositeKeyJoin>(sql, new
+                {
+                    aaa = keys
+                });
+                return Ok(await q);
+            }
         }
     }
 }

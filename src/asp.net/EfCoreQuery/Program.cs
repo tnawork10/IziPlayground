@@ -23,7 +23,7 @@ namespace EfCoreQuery
 
             var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
             builder.Services.AddSingleton<NpgsqlConnectionStringBuilder>(npsqlCsb);
-            builder.Services.AddDbContextPool<QueryDbContext>(x => x.UseNpgsql(cs));
+            builder.Services.AddDbContextPool<QueryDbContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
