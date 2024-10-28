@@ -31,7 +31,7 @@ namespace WebAPI
             builder.Services.AddZipkin(new OtlpParams()
             {
                 HostName = "localhost",
-                MainSourceName = "IziPlayGround.WebAPI.Source",
+                SourceName = "IziPlayGround.WebAPI.Source",
                 ServiceName = "IziPlayGround.WebAPI.Service",
             });
 
