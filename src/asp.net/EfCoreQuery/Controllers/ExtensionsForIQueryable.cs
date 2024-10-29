@@ -22,7 +22,8 @@ namespace EfCoreQuery.Controllers
               Index Cond: (("IdPart1" = 94) AND ("IdPart2" = 73))
         */
         /// </summary>
-        public static IQueryable<T> CompositeFilterP2<T, TId1, TId2>(this IQueryable<T> queriable, IEnumerable<(TId1, TId2)> ids, string propName0, string propName1)
+        /// <remarks>Много боксинга, но зато поиск по ключам (не Scan Index, а Bitmap Index Scan)</remarks>
+        public static IQueryable<T> CompositeKeyFilterP2<T, TId1, TId2>(this IQueryable<T> queriable, IEnumerable<(TId1, TId2)> ids, string propName0, string propName1)
 
         {
             var parameter = Expression.Parameter(typeof(T));
@@ -37,7 +38,7 @@ namespace EfCoreQuery.Controllers
             var predicate = Expression.Lambda<Func<T, bool>>(body, parameter);
             return queriable.Where(predicate);
         }
-        public static IQueryable<T> CompositeFilterP3<T, TId1, TId2, TId3>(this IQueryable<T> queriable, IEnumerable<(TId1, TId2, TId3)> ids, string propName0, string propName1, string propName3)
+        public static IQueryable<T> CompositeKeyFilterP3<T, TId1, TId2, TId3>(this IQueryable<T> queriable, IEnumerable<(TId1, TId2, TId3)> ids, string propName0, string propName1, string propName3)
 
         {
             var parameter = Expression.Parameter(typeof(T));

@@ -16,7 +16,7 @@ namespace IziHardGames.Playgrounds.ForEfCore
     {
         public Guid Id { get; set; }
         public string TextField { get; set; } = "Some";
-        public double DoubleField { get; set; } = double.MaxValue;
-        public int IntField { get; set; } = int.MaxValue;
+        public double DoubleField { get; set; } 
+        public int IntField { get; set; } 
     }
 }
