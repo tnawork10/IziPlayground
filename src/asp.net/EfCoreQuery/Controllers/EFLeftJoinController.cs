@@ -293,6 +293,33 @@ namespace EfCoreQuery.Controllers
             return NoContent();
         }
 
+        [HttpPost(nameof(CompositeJoinAtRemote))]
+        public async Task<IActionResult> CompositeJoinAtRemote()
+        {
+            /*
+              explain analyze    
+              SELECT c.id_part1, c.id_part2, c.some_random_value, c.value
+              FROM composite_key_joins AS c
+              INNER JOIN composite_key_joins_keys AS c0 ON c.id_part1 = c0.id_part1 AND c.id_part2 = c0.id_part2
+              LIMIT 100
+
+Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 loops=1)
+  ->  Nested Loop  (cost=0.30..746.02 rows=9801 width=32) (actual time=0.044..0.303 rows=100 loops=1)
+        ->  Seq Scan on composite_key_joins_keys c0  (cost=0.00..161.01 rows=9801 width=8) (actual time=0.004..0.008 rows=100 loops=1)
+        ->  Memoize  (cost=0.30..0.36 rows=1 width=32) (actual time=0.003..0.003 rows=1 loops=100)
+              Cache Key: c0.id_part1, c0.id_part2
+              Cache Mode: logical
+              Hits: 0  Misses: 100  Evictions: 0  Overflows: 0  Memory Usage: 14kB
+              ->  Index Scan using pk_composite_key_joins on composite_key_joins c  (cost=0.29..0.35 rows=1 width=32) (actual time=0.002..0.002 rows=1 loops=100)
+                    Index Cond: ((id_part1 = c0.id_part1) AND (id_part2 = c0.id_part2))
+            Planning Time: 0.286 ms
+            Execution Time: 0.388 ms
+             */
+            var e2s = await context.CompositeKeyJoins.Join(context.CompositeKeyJoinsKeys, x => new { x.IdPart1, x.IdPart2 }, y => new { y.IdPart1, y.IdPart2 }, (x, y) => x).Take(100).ToArrayAsync();
+            return Ok(e2s);
+        }
+
+
         [HttpPost(nameof(CompositeAttach))]
         public async Task<IActionResult> CompositeAttach()
         {
@@ -305,6 +332,79 @@ namespace EfCoreQuery.Controllers
             context.AttachRange(range);
             await context.SaveChangesAsync();
             return Ok();
+        }
+
+        [HttpPost(nameof(CompositeKeyWithRawQuery))]
+        public async Task<IActionResult> CompositeKeyWithRawQuery()
+        {
+            //var fs = new FormattableString();
+            var q = context.CompositeKeyJoins.FromSqlRaw("select * from \"composite_key_joins\" limit 50");
+            //var q2 = context.CompositeKeyJoinsKeys.FromSqlInterpolated($"{1}");
+            return Ok(await q.ToArrayAsync());
+        }
+
+     
+        [HttpPost(nameof(CompositeKeyWithRawQueryExt))]
+        public async Task<IActionResult> CompositeKeyWithRawQueryExt()
+        {
+            var e2 = await context.CompositeKeyJoins.Take(100).ToArrayAsync();
+            var keys = e2.Select(x => (x.IdPart1, x.IdPart2));
+
+
+            var q = context.CompositeKeyJoins.JoinByCompositeKey(
+                keys,
+                "composite_key_joins",
+                "id_part1",
+                "id_part2").AsNoTracking();
+            return Ok(await q.ToArrayAsync());
+        }
+        [HttpPost(nameof(CompositeKeyWithRawQueryExtV1))]
+        public async Task<IActionResult> CompositeKeyWithRawQueryExtV1()
+        {
+            var e2 = await context.CompositeKeyJoins.Take(100).ToArrayAsync();
+            var keys = e2.Select(x => (x.IdPart1, x.IdPart2));
+            var q = context.CompositeKeyJoins.JoinByCompositeKeyV1(
+                keys,
+                "composite_key_joins",
+                "id_part1",
+                "id_part2").AsNoTracking();
+            return Ok(await q.ToArrayAsync());
+        } 
+        [HttpPost(nameof(CompositeKeyWithRawQueryExtV2))]
+        public async Task<IActionResult> CompositeKeyWithRawQueryExtV2()
+        {
+            var e2 = await context.CompositeKeyJoins.Take(100).ToArrayAsync();
+            var keys = e2.Select(x => (x.IdPart1, x.IdPart2));
+            var q = context.CompositeKeyJoins.JoinByCompositeKeyV2(
+                keys,
+                "composite_key_joins",
+                "id_part1",
+                "id_part2").AsNoTracking();
+            return Ok(await q.ToArrayAsync());
+        } 
+        
+        [HttpPost(nameof(CompositeKeyWithRawQueryExtV3))]
+        public async Task<IActionResult> CompositeKeyWithRawQueryExtV3()
+        {
+            var e2 = await context.CompositeKeyJoins.Take(100).ToArrayAsync();
+            var keys = e2.Select(x => (x.IdPart1, x.IdPart2));
+            var q = context.CompositeKeyJoins.JoinByCompositeKeyV3(
+                keys,
+                "composite_key_joins",
+                "id_part1",
+                "id_part2").AsNoTracking();
+            return Ok(await q.ToArrayAsync());
+        }
+
+
+        [HttpPost(nameof(CompositeKeyWithLinqExpression))]
+        public async Task<IActionResult> CompositeKeyWithLinqExpression()
+        {
+            var e2 = await context.CompositeKeyJoins.Take(100).ToArrayAsync();
+            var keys = e2.Select(x => (x.IdPart1, x.IdPart2));
+            var q = context.CompositeKeyJoins.CompositeKeyFilterP2(keys, nameof(CompositeKeyJoin.IdPart1), nameof(CompositeKeyJoin.IdPart2));
+            //var q2 = context.CompositeKeyJoinsKeys.FromSqlInterpolated($"{1}");
+            return Ok(await q.ToArrayAsync());
         }
 
         [HttpPost(nameof(DapperQuery))]
@@ -349,7 +449,7 @@ namespace EfCoreQuery.Controllers
             const string sql = @"SELECT *
         FROM composite_key_joins
         WHERE (id_part1,id_part2) = ANY (@aaa);";
-        //WHERE (id_part1,id_part2) = ANY (@aaa);"; // error
+            //WHERE (id_part1,id_part2) = ANY (@aaa);"; // error
             //var keys = new[] { new TypeCompositeKeyObj { IdPart1 = 5, IdPart2 = 5 } };
             //var keys = new[] { (5, 5) };    // error
             var keys = new[] { new { id_part1 = 5, id_part2 = 5 } };    // error
