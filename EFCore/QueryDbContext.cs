@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Text.Json.Serialization;
@@ -17,6 +18,7 @@ namespace IziHardGames.Playgrounds.ForEfCore
         public DbSet<EntityWithValue> EntityWithValues { get; set; }
         public DbSet<CompositeKeyJoin> CompositeKeyJoins { get; set; }
         public DbSet<CompositeKeyJoinKeys> CompositeKeyJoinsKeys { get; set; }
+        public DbSet<EntityPkSimple> EntityPkSimples { get; set; }
 
         public QueryDbContext(DbContextOptions<QueryDbContext> options) : base(options)
         {
@@ -58,8 +60,29 @@ namespace IziHardGames.Playgrounds.ForEfCore
             }
             await this.SaveChangesAsync();
         }
+
+        public async Task PopulateEntityPkSimples()
+        {
+            for (int i = 1; i < 1000; i++)
+            {
+                this.EntityPkSimples.Add(new EntityPkSimple()
+                {
+                    Id = i,
+                    ValueAsInt = 5000 + i,
+                    ValuesAsDouble = double.MaxValue / (i),
+                });
+            }
+            await this.SaveChangesAsync();
+        }
     }
 
+    public class EntityPkSimple
+    {
+        [Key]
+        public int Id { get; set; }
+        public int ValueAsInt { get; set; }
+        public double ValuesAsDouble { get; set; }
+    }
     public class EntityWithValue
     {
         public Guid Id { get; set; }

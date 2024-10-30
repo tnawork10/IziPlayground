@@ -23,6 +23,7 @@ namespace EfCoreQuery.Controllers
             await context.Database.EnsureDeletedAsync();
             await context.Database.EnsureCreatedAsync();
             await context.PopulateCompositeKeyJoins();
+            await context.PopulateEntityPkSimples();
             return NoContent();
         }
 

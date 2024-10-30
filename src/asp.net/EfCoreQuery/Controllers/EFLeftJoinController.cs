@@ -132,6 +132,114 @@ namespace EfCoreQuery.Controllers
             return Ok(result);
         }
 
+        [HttpPost(nameof(CompositeWhereSeperatePair))]
+        public async Task<IActionResult> CompositeWhereSeperatePair()
+        {
+            var e2sKeysTuple = await context.CompositeKeyJoinsKeys.AsNoTracking().Take(100).ToArrayAsync();
+            var pks = e2sKeysTuple.Select(x => new { x.IdPart1, x.IdPart2 }).ToArray();
+
+            //var result = await context.CompositeKeyJoins.Where(x => pks.Contains(new { x.IdPart1, x.IdPart2})).ToArrayAsync();    // error
+
+            //var result = await context.CompositeKeyJoins.Select(x => new { Key = new { x.IdPart1, x.IdPart2 }, Entity = x }).
+            //    Where(x => pks.Contains(new { x.Entity.IdPart1, x.Entity.IdPart2 })).ToArrayAsync();    // error
+
+            return NoContent();
+        }
+
+        [HttpPost(nameof(CompositeWhereSeperateAny))]
+        public async Task<IActionResult> CompositeWhereSeperateAny()
+        {
+            var e2sKeysTuple = await context.CompositeKeyJoinsKeys.AsNoTracking().Take(100).ToArrayAsync();
+            var pk1 = e2sKeysTuple.Select(x => x.IdPart1).ToList();
+            var pk2 = e2sKeysTuple.Select(x => x.IdPart2).ToList();
+            // неправльный алгоритм так как выборка будет по любым комбинациям
+            //var result = await context.CompositeKeyJoins.Where(x => pk1.Contains(x.IdPart1) && pk2.Contains(x.IdPart2)).ToArrayAsync();    // Ok
+
+            // проблема возникает когда есть комбинации 4-2 и 2-4. или если массив имеет последовательность, например 2.2.2.2. индекс будет попадать только в первый встречный
+            var result = await context.CompositeKeyJoins.Where(x => pk1.IndexOf(x.IdPart1) == pk2.IndexOf(x.IdPart2)).ToArrayAsync();    // Ok
+            /*
+             SELECT c.id_part1, c.id_part2, c.some_random_value, c.value FROM composite_key_joins AS c WHERE COALESCE(array_position(@__pk1_0, c.id_part1) - 1, -1) = COALESCE(array_position(@__pk2_1, c.id_part2) - 1, -1)
+             ZIPKIN 37.195ms
+             */
+
+
+
+            /*
+             SELECT c.id_part1, c.id_part2, c.some_random_value, c.value FROM composite_key_joins AS c WHERE c.id_part1 = ANY (@__pk1_0) AND c.id_part2 = ANY (@__pk2_1)
+            
+            ZIPKIN: 40.771ms (no cache) 
+
+            EXPLAIN ANALYZE
+SELECT *
+FROM composite_key_joins AS c
+WHERE c.id_part1 = ANY (ARRAY[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+                        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 
+                        38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 
+                        54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 
+                        70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 
+                        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 
+                        102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 
+                        115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 
+                        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 
+                        141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 
+                        154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 
+                        167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 
+                        180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 
+                        193, 194, 195, 196, 197, 198]) AND c.id_part2 = ANY (ARRAY[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+                        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 
+                        38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 
+                        54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 
+                        70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 
+                        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 
+                        102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 
+                        115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 
+                        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 
+                        141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 
+                        154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 
+                        167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 
+                        180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 
+                        193, 194, 195, 196, 197, 198])
+
+Index Scan using pk_composite_key_joins on composite_key_joins c  (cost=0.29..287.95 rows=3939 width=32) (actual time=0.050..1.555 rows=9801 loops=1)
+  Index Cond: ((id_part1 = ANY ('{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198}'::integer[])) AND (id_part2 = ANY ('{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198}'::integer[])))
+Planning Time: 0.491 ms
+Execution Time: 1.784 ms
+             */
+            //return NoContent();
+            return Ok(result);
+        }
+        [HttpPost(nameof(CompositeContainsRecord))]
+        public async Task<IActionResult> CompositeContainsRecord()
+        {
+            var keysToFind = new List<RecordOfKeys>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    keysToFind.Add(new RecordOfKeys(i, j));
+                }
+            }
+            var q = context.CompositeKeyJoins.Where(x => keysToFind.Contains(new RecordOfKeys(x.IdPart1, x.IdPart2)));
+            var res = await q.ToArrayAsync();
+            return NoContent();
+        }
+        [HttpPost(nameof(CompositeContainsTuple))]
+        public async Task<IActionResult> CompositeContainsTuple()
+        {
+            //            var keysToFind = new List<(int idPart1, int idPart2)>
+            //{
+            //    (1, 2),
+            //    (3, 4),
+            //    (5, 6)
+            //};
+
+            //            var result = context.CompositeKeyJoins
+            //                .Where(c => keysToFind.Contains((c.IdPart1, c.IdPart2)))
+            //                .ToList();
+            return NoContent();
+        }
+
 
         [HttpPost(nameof(CompositeJoinWithEntity))]
         public async Task<IActionResult> CompositeJoinWithEntity()
@@ -343,7 +451,7 @@ Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 lo
             return Ok(await q.ToArrayAsync());
         }
 
-     
+
         [HttpPost(nameof(CompositeKeyWithRawQueryExt))]
         public async Task<IActionResult> CompositeKeyWithRawQueryExt()
         {
@@ -369,7 +477,7 @@ Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 lo
                 "id_part1",
                 "id_part2").AsNoTracking();
             return Ok(await q.ToArrayAsync());
-        } 
+        }
         [HttpPost(nameof(CompositeKeyWithRawQueryExtV2))]
         public async Task<IActionResult> CompositeKeyWithRawQueryExtV2()
         {
@@ -381,8 +489,8 @@ Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 lo
                 "id_part1",
                 "id_part2").AsNoTracking();
             return Ok(await q.ToArrayAsync());
-        } 
-        
+        }
+
         [HttpPost(nameof(CompositeKeyWithRawQueryExtV3))]
         public async Task<IActionResult> CompositeKeyWithRawQueryExtV3()
         {
@@ -467,5 +575,79 @@ Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 lo
                 return Ok(await q);
             }
         }
+
+        #region SIMPLE JOIN
+        [HttpPost(nameof(OneKeyJoinParam))]
+        public async Task<IActionResult> OneKeyJoinParam()
+        {
+            var list = new List<int>();
+            for (int i = 0; i < 100; i += 2)
+            {
+                list.Add(i);
+            }
+            var q = context.EntityPkSimples.AsNoTracking().Join(list, x => x.Id, y => y, (x, y) => x);
+            var qs = q.ToQueryString();
+            var result = await q.ToArrayAsync();
+            return Ok(new { Query = qs, Result = result });
+
+            /*
+EXPLAIN ANALYZE
+SELECT e.id, e.value_as_int, e.values_as_double
+FROM entity_pk_simples AS e
+INNER JOIN unnest(ARRAY[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98]) AS p(value)
+ON e.id = p.value;
+
+Hash Join  (cost=1.13..21.36 rows=50 width=16) (actual time=0.034..0.141 rows=49 loops=1)
+  Hash Cond: (e.id = p.value)
+  ->  Seq Scan on entity_pk_simples e  (cost=0.00..15.99 rows=999 width=16) (actual time=0.004..0.044 rows=999 loops=1)
+  ->  Hash  (cost=0.50..0.50 rows=50 width=4) (actual time=0.014..0.014 rows=50 loops=1)
+        Buckets: 1024  Batches: 1  Memory Usage: 10kB
+        ->  Function Scan on unnest p  (cost=0.00..0.50 rows=50 width=4) (actual time=0.006..0.008 rows=50 loops=1)
+Planning Time: 0.174 ms
+Execution Time: 0.154 ms
+
+            ZIPKIN: 3.217ms (double click)
+            ZIPKIN: 7.860ms
+            ZIPKIN: 75ms (no cache)
+             */
+        }
+
+        #endregion
+
+        [HttpPost(nameof(OneKeyContains))]
+        public async Task<IActionResult> OneKeyContains()
+        {
+            var list = new List<int>();
+            for (int i = 0; i < 100; i += 2)
+            {
+                list.Add(i);
+            }
+            var q = context.EntityPkSimples.AsNoTracking().Where(x => list.Contains(x.Id));
+            var qs = q.ToQueryString();
+            var result = await q.ToArrayAsync();
+            return Ok(new { Query = qs, Result = result });
+
+            /*
+             * 
+             SELECT e.id, e.value_as_int, e.values_as_double FROM entity_pk_simples AS e WHERE e.id = ANY (@__list_0)
+            ZIPKIN: 3.641ms
+            ZIPKIN: 7.478
+            ZIPKIN: 68.760ms (no cache)
+
+
+EXPLAIN ANALYZE
+SELECT e.id, e.value_as_int, e.values_as_double
+FROM entity_pk_simples AS e
+WHERE e.id = ANY (ARRAY[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98]);
+
+QUERY PLAN
+Index Scan using pk_entity_pk_simples on entity_pk_simples e  (cost=0.28..13.43 rows=50 width=16) (actual time=0.014..0.018 rows=49 loops=1)
+  Index Cond: (id = ANY ('{0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98}'::integer[]))
+Planning Time: 0.146 ms
+Execution Time: 0.032 ms
+             */
+        }
     }
+
+    public record RecordOfKeys(int pk1, int pk2);
 }

@@ -1,4 +1,5 @@
 
+using IziHardGames.Observing.Tracing;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
@@ -23,6 +24,7 @@ namespace EfCoreQuery
 
             var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
             builder.Services.AddSingleton<NpgsqlConnectionStringBuilder>(npsqlCsb);
+            builder.Services.AddZipkin(new OtlpParams() { HostName = "localhost", MainSourceName = "EfCoreQuery.Source", ServiceName = "EfCoreQuery.Service" });
             builder.Services.AddDbContextPool<QueryDbContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());
 
             builder.Services.AddControllers();
