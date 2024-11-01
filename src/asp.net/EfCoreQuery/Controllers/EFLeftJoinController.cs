@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using Dapper;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.AspNetCore.Mvc;
@@ -224,6 +225,7 @@ Execution Time: 1.784 ms
             var res = await q.ToArrayAsync();
             return NoContent();
         }
+
         [HttpPost(nameof(CompositeContainsTuple))]
         public async Task<IActionResult> CompositeContainsTuple()
         {
@@ -427,6 +429,73 @@ Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 lo
             return Ok(e2s);
         }
 
+        [HttpPost(nameof(CompositeOuter))]
+        public async Task<IActionResult> CompositeOuter()
+        {
+            // ERROR -  System.ArgumentException: must be reducible node
+            var outer = await context.CompositeKeyJoinsKeys.Take(100).ToArrayAsync();
+            var q = outer
+                   .AsQueryable()
+                   .Join(context.CompositeKeyJoinsKeys, outer => new { outer.IdPart1, outer.IdPart2 }, inner => new { inner.IdPart1, inner.IdPart2 }, (outer, inner) => new { outer, inner });
+
+            var qs = q.ToQueryString();
+            var result = await q.ToArrayAsync();
+            return Ok(new { qs = qs, result = result });
+        }
+
+        [HttpPost(nameof(CompositeOuter2))]
+        public async Task<IActionResult> CompositeOuter2()
+        {
+            var outer = await context.CompositeKeyJoinsKeys.Take(100).ToArrayAsync();
+            var q = outer
+                   .AsQueryable()
+                   .Select(x => context.CompositeKeyJoinsKeys.Where(y => y.IdPart1 == x.IdPart1 && y.IdPart2 == x.IdPart2));
+
+            var qs = q.ToQueryString();
+            // делает по 1 запросу в бд. не поддерживает async
+            var result = q.AsSingleQuery().ToArray();
+            return Ok(new { qs = qs, result = result });
+        }
+
+        [HttpPost(nameof(CompositeOuter3))]
+        public async Task<IActionResult> CompositeOuter3()
+        {
+            var outer = await context.CompositeKeyJoinsKeys.Take(100).ToArrayAsync();
+            var q = context.CompositeKeyJoins.JoinByCompositeKeyV4(outer.Select(x => (x.IdPart1, x.IdPart2)), "composite_key_joins", "id_part1", "id_part2");
+
+            var qs = q.ToQueryString();
+            // делает по 1 запросу в бд. не поддерживает async
+            var result = await q.AsSingleQuery().ToArrayAsync();
+            return Ok(new { qs = qs, result = result });
+        }
+
+        [HttpPost(nameof(CompositeOuter4))]
+        public async Task<IActionResult> CompositeOuter4()
+        {
+            // error: System.InvalidOperationException: The LINQ expression 'DbSet<CompositeKeyJoin>() could not be translated. Either rewrite the query in a form that can be translated
+            var outer = await context.CompositeKeyJoinsKeys.Take(100).ToArrayAsync();
+            var hs = outer.Select(x => new { x.IdPart1, x.IdPart2 }).ToHashSet();
+            var q = context.CompositeKeyJoins.Where(x => hs.Contains(new { x.IdPart1, x.IdPart2 }));
+
+            var qs = q.ToQueryString();
+            // делает по 1 запросу в бд. не поддерживает async
+            var result = await q.AsSingleQuery().ToArrayAsync();
+            return Ok(new { qs = qs, result = result });
+        }
+
+        //[HttpPost(nameof(CompositeOuter3))]
+        //public async Task<IActionResult> CompositeOuter3()
+        //{
+        //    var outer = await context.CompositeKeyJoinsKeys.Take(100).ToArrayAsync();
+        //    var q = outer
+        //           .AsQueryable()
+        //           .Join();
+
+        //    var qs = q.ToQueryString();
+        //    // делает по 1 запросу в бд. не поддерживает async
+        //    var result = q.AsSingleQuery().ToArray();
+        //    return Ok(new { qs = qs, result = result });
+        //}
 
         [HttpPost(nameof(CompositeAttach))]
         public async Task<IActionResult> CompositeAttach()

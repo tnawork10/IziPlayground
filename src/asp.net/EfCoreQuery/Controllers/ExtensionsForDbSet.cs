@@ -179,5 +179,34 @@ Execution Time: 1.035 ms
                 JOIN unnest(ARRAY[{values}]) AS keys(pk1, pk2) ON source.{nameOfPK1}=keys.pk1 AND source.{nameOfPK2}=keys.pk2");
             return q;
         }
+
+        public static IQueryable<T> JoinByCompositeKeyV4<T, TPK1, TPK2>(this DbSet<T> dbset,
+                                                                     IEnumerable<(TPK1, TPK2)> keys,
+                                                                     string tableName,
+                                                                     string nameOfPK1,
+                                                                     string nameOfPK2) where T : class
+        {
+            if (!keys.Any()) throw new ArgumentException();
+            var sb = new StringBuilder();
+            var values = string.Empty;
+            foreach (var key in keys)
+            {
+                sb.Append("(");
+                sb.Append(key.Item1.ToString());
+                sb.Append(',');
+                sb.Append(key.Item2.ToString());
+                sb.Append(')');
+                sb.Append(',');
+            }
+            sb.Length = sb.Length - 1;
+
+            values = sb.ToString();
+            var q = dbset.FromSqlRaw(
+                $@"SELECT t2.* FROM (VALUES {values}) AS temp(pk1, pk2) 
+                JOIN (SELECT source.* FROM {tableName} source) as t2
+                ON t2.{nameOfPK1}=temp.pk1 AND t2.{nameOfPK2}=temp.pk2
+");
+            return q;
+        }
     }
 }
