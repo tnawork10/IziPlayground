@@ -9,6 +9,7 @@ namespace IziHardGames.Playgrounds.ForEfCore
 {
     public class CheckDbCommands
     {
+        /// <include file='C:\Users\ivan\Documents\.csharp\IziPlayGround\src\asp.net\EfCoreQuery\bin\Debug\net8.0\EfCoreQuery.xml' path=""'/>
         public static async Task Check()
         {
             // var json = "[\n  {\n    \"hardwareId\": 0,\n    \"signalId\": 0\n  }\n]";

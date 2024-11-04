@@ -1,39 +1,33 @@
 
-using IziHardGames.Observing.Tracing;
-using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
-using WebAPI.ActionFilters;
-using WebAPI.Middlewares;
+using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
+using ValueObjects.DAL;
 
-namespace WebAPI
+namespace ValueObjects
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            var builder = WebApplication.CreateBuilder(args);
+
+
             var uid = Environment.GetEnvironmentVariable("IZHG_DB_POSTGRES_USER_DEV");
             var pwd = Environment.GetEnvironmentVariable("IZHG_DB_POSTGRES_PASSWORD_DEV");
             var server = Environment.GetEnvironmentVariable("IZHG_DB_POSTGRES_SERVER_DEV");
             var port = Environment.GetEnvironmentVariable("IZHG_DB_POSTGRES_PORT_DEV");
             var portVal = $";port={port}";
 
-            var cs = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=PlaygroundSelfHierarchy";
+            var cs = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=EfCoreQuery";
 
-            var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddDbContextPool<PlaygroundSelfHierarchyDbContext>(x => x.UseNpgsql(cs));
+            var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
 
-            // Add services to the container.
-
-            builder.Services.AddControllers(x => x.Filters.Add<DisposableActionFilter>());
+            builder.Services.AddDbContextPool<ValueObjectsDbContext>(x => x.UseNpgsql(npsqlCsb.ConnectionString));
+            builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddZipkin(new OtlpParams()
-            {
-                HostName = "localhost",
-                MainSourceName = "IziPlayGround.WebAPI.Source",
-                ServiceName = "IziPlayGround.WebAPI.Service",
-            });
 
             var app = builder.Build();
 
@@ -44,9 +38,11 @@ namespace WebAPI
                 app.UseSwaggerUI();
             }
 
-            app.UseMiddleware<MiddlewareExplorer>();
             app.UseAuthorization();
+
+
             app.MapControllers();
+
             app.Run();
         }
     }

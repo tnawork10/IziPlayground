@@ -15,12 +15,12 @@ namespace EfCoreQuery.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EFLeftJoinController : ControllerBase
+    public class LeftJoinController : ControllerBase
     {
         private QueryDbContext context;
         private NpgsqlConnectionStringBuilder csBuilder;
 
-        public EFLeftJoinController(QueryDbContext context, NpgsqlConnectionStringBuilder csBuilder)
+        public LeftJoinController(QueryDbContext context, NpgsqlConnectionStringBuilder csBuilder)
         {
             this.context = context;
             this.csBuilder = csBuilder;
@@ -457,11 +457,11 @@ Limit  (cost=0.30..7.90 rows=100 width=32) (actual time=0.045..0.309 rows=100 lo
             return Ok(new { qs = qs, result = result });
         }
 
-        [HttpPost(nameof(CompositeOuter3))]
-        public async Task<IActionResult> CompositeOuter3()
+        [HttpPost(nameof(CompositeRawSqlWithForceIndexing))]
+        public async Task<IActionResult> CompositeRawSqlWithForceIndexing()
         {
             var outer = await context.CompositeKeyJoinsKeys.Take(100).ToArrayAsync();
-            var q = context.CompositeKeyJoins.JoinByCompositeKeyV4(outer.Select(x => (x.IdPart1, x.IdPart2)), "composite_key_joins", "id_part1", "id_part2");
+            var q = context.CompositeKeyJoins.JoinByCompositeKeyUsingIndex(outer.Select(x => (x.IdPart1, x.IdPart2)), "composite_key_joins", "id_part1", "id_part2");
 
             var qs = q.ToQueryString();
             // делает по 1 запросу в бд. не поддерживает async

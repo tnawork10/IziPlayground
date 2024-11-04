@@ -180,7 +180,9 @@ Execution Time: 1.035 ms
             return q;
         }
 
-        public static IQueryable<T> JoinByCompositeKeyV4<T, TPK1, TPK2>(this DbSet<T> dbset,
+
+
+        public static IQueryable<T> JoinByCompositeKeyUsingIndex<T, TPK1, TPK2>(this DbSet<T> dbset,
                                                                      IEnumerable<(TPK1, TPK2)> keys,
                                                                      string tableName,
                                                                      string nameOfPK1,
@@ -202,10 +204,18 @@ Execution Time: 1.035 ms
 
             values = sb.ToString();
             var q = dbset.FromSqlRaw(
-                $@"SELECT t2.* FROM (VALUES {values}) AS temp(pk1, pk2) 
-                JOIN (SELECT source.* FROM {tableName} source) as t2
-                ON t2.{nameOfPK1}=temp.pk1 AND t2.{nameOfPK2}=temp.pk2
-");
+                $@"SET enable_seqscan TO off; SET enable_indexscan = on; SET enable_hashjoin = off; 
+
+                            SELECT t2.* FROM (VALUES {values}) AS temp(pk1, pk2) 
+                            JOIN (SELECT source.* FROM {tableName} source) as t2
+                            ON t2.{nameOfPK1}=temp.pk1 AND t2.{nameOfPK2}=temp.pk2
+            ");
+
+            //            var q = dbset.FromSqlRaw(
+            //                $@"SELECT t2.* FROM (VALUES {values}) AS temp(pk1, pk2) 
+            //                JOIN (SELECT source.* FROM {tableName} source) as t2
+            //                ON t2.{nameOfPK1}=temp.pk1 AND t2.{nameOfPK2}=temp.pk2
+            //");
             return q;
         }
     }

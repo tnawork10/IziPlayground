@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.Linq;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace IziHardGames.Playgrounds.ForEfCore
         public DbSet<CompositeKeyJoin> CompositeKeyJoins { get; set; }
         public DbSet<CompositeKeyJoinKeys> CompositeKeyJoinsKeys { get; set; }
         public DbSet<EntityPkSimple> EntityPkSimples { get; set; }
+        public DbSet<EntityWithCompositeUniqIndex> EntityWithCompositeUniqIndices { get; set; }
 
         public QueryDbContext(DbContextOptions<QueryDbContext> options) : base(options)
         {
@@ -30,8 +32,9 @@ namespace IziHardGames.Playgrounds.ForEfCore
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<EntQueryOne>().HasOne(x => x.One).WithOne(x => x.One).HasForeignKey<EntQueryToOne>(b => b.OneId);
             modelBuilder.Entity<EntQueryOne>().HasMany(x => x.Many).WithOne(x => x.One);
-            //modelBuilder.Entity<CompositeKeyJoin>().HasKey(x => new { x.IdPart1, x.IdPart2 });
-            modelBuilder.Entity<CompositeKeyJoin>().HasKey(x => new KeyTyped(x.IdPart1, x.IdPart2));
+            modelBuilder.Entity<CompositeKeyJoin>().HasKey(x => new { x.IdPart1, x.IdPart2 });
+            //modelBuilder.Entity<CompositeKeyJoin>().HasKey(x => new KeyTyped(x.IdPart1, x.IdPart2));
+            modelBuilder.Entity<EntityWithCompositeUniqIndex>().HasIndex(x => new { x.UniqIndex1, x.UniqIndex2 }).IsUnique();
         }
 
         public async Task PopulateCompositeKeyJoins()
@@ -74,7 +77,31 @@ namespace IziHardGames.Playgrounds.ForEfCore
             }
             await this.SaveChangesAsync();
         }
+        public async Task PopulateEntityWithCompositeUniqIndex()
+        {
+            for (int i = 1; i < 100; i++)
+            {
+                for (int j = 1; j < 100; j++)
+                {
+                    this.EntityWithCompositeUniqIndices.Add(new EntityWithCompositeUniqIndex()
+                    {
+                        Id = Guid.NewGuid(),
+                        UniqIndex1 = i,
+                        UniqIndex2 = j,
+                        ValueAsDouble = double.MaxValue / (i),
+                    });
+                }
+            }
+            await this.SaveChangesAsync();
+        }
+
+        public static readonly Func<QueryDbContext, IEnumerable<KeyTyped>, Task<List<EntityWithCompositeUniqIndex>>> CompiledV1 =
+          EF.CompileAsyncQuery((QueryDbContext context, IEnumerable<KeyTyped> keys) =>
+              context.EntityWithCompositeUniqIndices.Where(o => keys.Any(x => x == o.Index)).ToList());
+        //context.EntityWithCompositeUniqIndices.Join(keys, x => new { x.UniqIndex1, x.UniqIndex2 }, y => new { UniqIndex1 = y.KeyIdPart1, UniqIndex2 = y.KeyIdPart2 }, (x, y) => x).ToList());
     }
+
+
 
     public class EntityPkSimple
     {
@@ -108,6 +135,14 @@ namespace IziHardGames.Playgrounds.ForEfCore
         [JsonIgnore] public EntQueryOne One { get; set; }
     }
 
+    public class EntityWithCompositeUniqIndex
+    {
+        public Guid Id { get; set; }
+        public int UniqIndex1 { get; set; }
+        public int UniqIndex2 { get; set; }
+        public double ValueAsDouble { get; set; }
+        public KeyTyped Index => new KeyTyped(UniqIndex1, UniqIndex2);
+    }
     public class CompositeKeyJoin
     {
         public object Key => new { IdPart1, IdPart2 };

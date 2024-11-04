@@ -6,12 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EfCoreQuery.Controllers
 {
+    /// <summary>
+    /// Some controller with comments
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class DevController : ControllerBase
     {
         private QueryDbContext context;
-
+        /// <summary>
+        /// some action with comments
+        /// </summary>
+        /// <param name="context"></param>
         public DevController(QueryDbContext context)
         {
             this.context = context;
@@ -24,6 +30,7 @@ namespace EfCoreQuery.Controllers
             await context.Database.EnsureCreatedAsync();
             await context.PopulateCompositeKeyJoins();
             await context.PopulateEntityPkSimples();
+            await context.PopulateEntityWithCompositeUniqIndex();
             return NoContent();
         }
 
