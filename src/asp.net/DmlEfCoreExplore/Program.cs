@@ -1,4 +1,5 @@
 
+using IziHardGames.Observing.Tracing;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +24,14 @@ namespace DmlEfCoreExplore
             var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
             // Add services to the container.
 
-            builder.Services.AddDbContextPool<DmlResearchContext>(x => x.UseNpgsql(cs));
+            builder.Services.AddZipkin(new OtlpParams()
+            {
+                HostName = "localhost",
+                MainSourceName = "DmlEfCoreExplore.Source",
+                ServiceName = "DmlEfCoreExplore.Service",
+            });
+
+            builder.Services.AddDbContextPool<DmlResearchContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
