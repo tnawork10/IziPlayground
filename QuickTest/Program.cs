@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 
 namespace QuickTest;
-
 class Program
 {
     static async Task Main(string[] args)
@@ -15,6 +14,7 @@ class Program
         var list = new int[] { 1 };
         var order = list.OrderBy(x => x).ToArray();
 
+        await ParallelForEach.RunForeachToArrayWrite();
     }
 
     private static async IAsyncEnumerable<int> AsyncStream([EnumeratorCancellation] CancellationToken ct = default)
