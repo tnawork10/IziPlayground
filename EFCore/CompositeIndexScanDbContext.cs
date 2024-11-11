@@ -14,6 +14,7 @@ namespace IziHardGames.Playgrounds.ForEfCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<EntityCompositeIndex>().HasKey(x => new { x.Type, x.GuidFirst, x.GuidSecond });
         }
 
         public void Init()
@@ -37,7 +38,7 @@ namespace IziHardGames.Playgrounds.ForEfCore
         public int Id { get; set; }
         public Guid? GuidFirst { get; set; }
         public Guid? GuidSecond { get; set; }
-        public ECompositeIndexType? Type { get; set; }
+        public ECompositeIndexType Type { get; set; }
     }
 
     public enum ECompositeIndexType
