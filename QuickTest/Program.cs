@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 
 namespace QuickTest;
-
 class Program
 {
     static async Task Main(string[] args)
@@ -17,6 +16,7 @@ class Program
         Console.WriteLine(DateOnly.FromDateTime(date).ToString());
         Console.WriteLine(JsonSerializer.Serialize(DateOnly.FromDateTime(date)));
 
+        await ParallelForEach.RunForeachToArrayWrite();
     }
 
 
