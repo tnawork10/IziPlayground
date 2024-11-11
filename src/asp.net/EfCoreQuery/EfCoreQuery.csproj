@@ -15,4 +15,8 @@
     <ProjectReference Include="..\..\..\EFCore\EFCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 </Project>

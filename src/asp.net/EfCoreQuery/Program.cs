@@ -21,11 +21,13 @@ namespace EfCoreQuery
             var portVal = $";port={port}";
 
             var cs = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=EfCoreQuery";
+            var csIndex = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=CompositeIndex";
 
             var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
             builder.Services.AddSingleton<NpgsqlConnectionStringBuilder>(npsqlCsb);
             builder.Services.AddZipkin(new OtlpParams() { HostName = "localhost", MainSourceName = "EfCoreQuery.Source", ServiceName = "EfCoreQuery.Service" });
             builder.Services.AddDbContextPool<QueryDbContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());
+            builder.Services.AddDbContextPool<CompositeIndexScanDbContext>(x => x.UseNpgsql(csIndex).UseSnakeCaseNamingConvention());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
