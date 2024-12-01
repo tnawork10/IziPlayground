@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <ProjectGuid>7f49e340-d266-41c7-bc14-65a682826dbe</ProjectGuid>
+    <ProjectGuid>d1e0f4f9-6beb-4d5b-a903-55118769437b</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
   </PropertyGroup>

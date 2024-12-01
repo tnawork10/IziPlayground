@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ProjectGuid>ac6ec207-883f-45b8-91b9-8b4d29fbdafc</ProjectGuid>
+    <ProjectGuid>d88c0b59-2448-4d86-957b-a8ecdd4304ea</ProjectGuid>
     <RootNamespace>IziHardGames.Playgrounds.ForEfCore</RootNamespace>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>

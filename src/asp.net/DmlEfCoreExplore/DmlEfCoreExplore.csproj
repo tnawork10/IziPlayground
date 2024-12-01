@@ -9,9 +9,16 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\EFCore\EFCore.csproj" />
+    <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
+      <Project>59df4cff-035e-4548-baad-8b4a7eac4fb4</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\EFCore\EFCore.csproj">
+      <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sql\" />
   </ItemGroup>
 </Project>

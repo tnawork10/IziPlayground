@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ProjectGuid>ca824205-a82e-42d2-b5fe-404e76363cae</ProjectGuid>
+    <Company>IziHardGames</Company>
+    <Author>Tran Ngoc Anh</Author>
+  </PropertyGroup>
+</Project>

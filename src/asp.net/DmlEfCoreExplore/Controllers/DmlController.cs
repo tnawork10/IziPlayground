@@ -26,10 +26,14 @@ namespace DmlEfCoreExplore.Controllers
             context.Entities.Add(new DmlEntity()
             {
                 Id = guid0,
+                IntField = int.MaxValue,
+                DoubleField = double.MaxValue,
             });
             context.Entities.Add(new DmlEntity()
             {
                 Id = guid1,
+                DoubleField = double.MinValue,
+                IntField = int.MinValue,
             });
             await context.SaveChangesAsync();
             return Ok(await context.Entities.ToArrayAsync());
@@ -44,6 +48,13 @@ namespace DmlEfCoreExplore.Controllers
                 IntField = 1
             });
             await context.SaveChangesAsync();
+            return Ok(await context.Entities.ToArrayAsync());
+        }
+
+        [HttpPut(nameof(UpdateEntityPartly))]
+        public async Task<IActionResult> UpdateEntityPartly()
+        {
+            await context.Entities.Where(x => x.Id == guid0).ExecuteUpdateAsync(e => e.SetProperty(p => p.IntField, 111));
             return Ok(await context.Entities.ToArrayAsync());
         }
     }

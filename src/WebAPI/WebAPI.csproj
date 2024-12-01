@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ProjectGuid>9d2b3f32-5f30-4b84-a434-43190b9c72a7</ProjectGuid>
+    <ProjectGuid>82e2405b-b5b2-4217-ad40-017cf70aec6b</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
   </PropertyGroup>
@@ -11,7 +11,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj" />
-    <ProjectReference Include="..\..\EFCore\EFCore.csproj" />
+    <ProjectReference Include="..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
+      <Project>59df4cff-035e-4548-baad-8b4a7eac4fb4</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EFCore\EFCore.csproj">
+      <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
+    </ProjectReference>
   </ItemGroup>
 </Project>

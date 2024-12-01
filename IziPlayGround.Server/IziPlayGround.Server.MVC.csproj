@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <ProjectGuid>fc67e9fe-51ed-4e1a-8849-9b0a380ffdf4</ProjectGuid>
+    <ProjectGuid>f1046b33-57ff-477d-b34b-b3cc9547acac</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
   </PropertyGroup>
@@ -13,6 +13,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EFCore\EFCore.csproj" />
+    <ProjectReference Include="..\EFCore\EFCore.csproj">
+      <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
+    </ProjectReference>
   </ItemGroup>
 </Project>

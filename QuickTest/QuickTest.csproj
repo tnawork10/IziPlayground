@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <ProjectGuid>aeff7eb2-3d38-423d-bf8d-be72bf80a94b</ProjectGuid>
+    <ProjectGuid>99c140d0-10f6-486f-82e4-a02dad994380</ProjectGuid>
     <Company>IziHardGames</Company>
     <RootNamespace>IziHardGames.QuickTests</RootNamespace>
     <Author>Tran Ngoc Anh</Author>
@@ -14,9 +14,15 @@
     <PackageReference Include="Moq" Version="4.20.70" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EFCore\EFCore.csproj" />
-    <ProjectReference Include="..\src\IziAsyncEnumerables\IziAsyncEnumerables.csproj" />
-    <ProjectReference Include="..\src\UnsafE\Unsafe.csproj" />
+    <ProjectReference Include="..\EFCore\EFCore.csproj">
+      <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\src\IziAsyncEnumerables\IziAsyncEnumerables.csproj">
+      <Project>4d2f16ff-181c-4697-8a75-4213b63f7756</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\src\UnsafE\Unsafe.csproj">
+      <Project>d1e0f4f9-6beb-4d5b-a903-55118769437b</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

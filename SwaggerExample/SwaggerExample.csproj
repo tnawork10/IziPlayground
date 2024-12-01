@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-SwaggerExample-61e4f6a3-5276-4873-a795-2b838646b42e</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <ProjectGuid>d209a5de-fd2b-4afc-9da8-59dc2df1bd7b</ProjectGuid>
+    <ProjectGuid>55c4e4ce-9641-46ba-a34e-979952b8e766</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
   </PropertyGroup>
