@@ -1,54 +1,55 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <Company>IziHardGames</Company>
-        <Author>Tran Ngoc Anh</Author>
-        <ProjectGuid></ProjectGuid>
-        <RootNamespace></RootNamespace>
-    </PropertyGroup>
-
-    <PropertyGroup>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <NuspecFile>IziHardGames.IziDummyNuget.nuspec</NuspecFile>
-        <PackageOutputPath>$(MY_NUGET_REGISTRY)</PackageOutputPath>
-        <!--        -->
-        <!--        <PackageProjectUrl>https://izhg.online/nuget/IziHardGames.IziDummyNuget</PackageProjectUrl>-->
-        <!--        <PackageLicenseUrl>https://raw.githubusercontent.com/aspnet/AspNetCore/2.0.0/LICENSE.txt</PackageLicenseUrl>-->
-        <!--        <Title>Some Title</Title>-->
-        <!--        <Authors>Tran Ngoc Anh</Authors>-->
-        <!--        <Version>1.0.2</Version>-->
-        <!--        <PackageId>IziHardGames.IziDummyNuget</PackageId>-->
-        <!--        <PackageDescription>Some Dummy Package</PackageDescription>-->
-        <!--        <PackageTags>Microsoft Azure Storage Blobs;Microsoft;Azure;Blobs;Blob;Storage;StorageScalable</PackageTags>-->
-        <!--        <RepositoryUrl>https://github.com/username/repo</RepositoryUrl> &lt;!&ndash; URL of the repository &ndash;&gt;-->
-        <!--        <RepositoryType>git</RepositoryType> &lt;!&ndash; Type of repository (e.g., git) &ndash;&gt;-->
-        <!--        <LicenseExpression>MIT</LicenseExpression> &lt;!&ndash; SPDX license identifier &ndash;&gt;-->
-        <!--        <Icon>icon.ico</Icon> &lt;!&ndash; Icon file for the package &ndash;&gt;-->
-        <!--        &lt;!&ndash; Не отображается в пакете &ndash;&gt;-->
-        <!--        <VersionPrefix>1.0</VersionPrefix> &lt;!&ndash; The version prefix (e.g., 1.0) &ndash;&gt;-->
-        <!--        <VersionSuffix>beta</VersionSuffix> &lt;!&ndash; The version suffix (e.g., beta) &ndash;&gt;-->
-        <!--        <AssemblyVersion>1.0.0.0</AssemblyVersion> &lt;!&ndash; The assembly version &ndash;&gt;-->
-        <!--        <FileVersion>1.0.0.0</FileVersion> &lt;!&ndash; The file version &ndash;&gt;-->
-        <!--        <InformationalVersion>1.0.0-beta</InformationalVersion> &lt;!&ndash; The informational version &ndash;&gt;-->
-        <!--        &lt;!&ndash;        <PackageIconUrl>https://example.com/icon.png</PackageIconUrl> &ndash;&gt;-->
-
-    </PropertyGroup>
-
-    <ItemGroup>
-        <!-- Include the icon file in the package 
-        
-        -->
-        <None Update="icon.ico">
-            <Pack>True</Pack> <!-- Include the file in the package -->
-            <PackagePath>icon.ico</PackagePath> <!-- Path in the package -->
-        </None>
-    </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ProjectGuid></ProjectGuid>
+    <Nullable>enable</Nullable>
+    <Company>IziHardGames</Company>
+    <Author>Tran Ngoc Anh</Author>
+    <ProjectGuid>8eb3e157-c1fd-4955-b213-4e4bd82cbf1c</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NuspecFile>IziHardGames.IziDummyNuget.nuspec</NuspecFile>
+    <PackageOutputPath>$(MY_NUGET_REGISTRY)</PackageOutputPath>
+    <!--        -->
+    <!--        <PackageProjectUrl>https://izhg.online/nuget/IziHardGames.IziDummyNuget</PackageProjectUrl>-->
+    <!--        <PackageLicenseUrl>https://raw.githubusercontent.com/aspnet/AspNetCore/2.0.0/LICENSE.txt</PackageLicenseUrl>-->
+    <!--        <Title>Some Title</Title>-->
+    <!--        <Authors>Tran Ngoc Anh</Authors>-->
+    <!--        <Version>1.0.2</Version>-->
+    <!--        <PackageId>IziHardGames.IziDummyNuget</PackageId>-->
+    <!--        <PackageDescription>Some Dummy Package</PackageDescription>-->
+    <!--        <PackageTags>Microsoft Azure Storage Blobs;Microsoft;Azure;Blobs;Blob;Storage;StorageScalable</PackageTags>-->
+    <!--        <RepositoryUrl>https://github.com/username/repo</RepositoryUrl> &lt;!&ndash; URL of the repository &ndash;&gt;-->
+    <!--        <RepositoryType>git</RepositoryType> &lt;!&ndash; Type of repository (e.g., git) &ndash;&gt;-->
+    <!--        <LicenseExpression>MIT</LicenseExpression> &lt;!&ndash; SPDX license identifier &ndash;&gt;-->
+    <!--        <Icon>icon.ico</Icon> &lt;!&ndash; Icon file for the package &ndash;&gt;-->
+    <!--        &lt;!&ndash; Не отображается в пакете &ndash;&gt;-->
+    <!--        <VersionPrefix>1.0</VersionPrefix> &lt;!&ndash; The version prefix (e.g., 1.0) &ndash;&gt;-->
+    <!--        <VersionSuffix>beta</VersionSuffix> &lt;!&ndash; The version suffix (e.g., beta) &ndash;&gt;-->
+    <!--        <AssemblyVersion>1.0.0.0</AssemblyVersion> &lt;!&ndash; The assembly version &ndash;&gt;-->
+    <!--        <FileVersion>1.0.0.0</FileVersion> &lt;!&ndash; The file version &ndash;&gt;-->
+    <!--        <InformationalVersion>1.0.0-beta</InformationalVersion> &lt;!&ndash; The informational version &ndash;&gt;-->
+    <!--        &lt;!&ndash;        <PackageIconUrl>https://example.com/icon.png</PackageIconUrl> &ndash;&gt;-->
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Include the icon file in the package 
+        
+        -->
+    <None Update="icon.ico">
+      <Pack>True</Pack>
+      <!-- Include the file in the package -->
+      <PackagePath>icon.ico</PackagePath>
+      <!-- Path in the package -->
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ProjectGuid>
+    </ProjectGuid>
     <RootNamespace>IziHardGames.Playgrounds.ForNuget.Publishing</RootNamespace>
     <Nullable>enable</Nullable>
     <PackageId>IziHardGames.IziDummyNuget</PackageId>

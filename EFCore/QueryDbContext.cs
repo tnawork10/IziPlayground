@@ -145,8 +145,8 @@ namespace IziHardGames.Playgrounds.ForEfCore
     }
     public class CompositeKeyJoin
     {
-        public object Key => new { IdPart1, IdPart2 };
-        public KeyTyped KeyTyped => new KeyTyped(IdPart1, IdPart2);
+        //public object Key => new { IdPart1, IdPart2 };
+        //public KeyTyped KeyTyped => new KeyTyped(IdPart1, IdPart2);
         public int IdPart1 { get; set; }
         public int IdPart2 { get; set; }
         public double Value { get; set; }

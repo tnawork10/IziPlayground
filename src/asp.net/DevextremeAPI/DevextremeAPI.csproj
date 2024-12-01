@@ -3,13 +3,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ProjectGuid>3213c83b-3f49-4010-a505-9226f07dca09</ProjectGuid>
+    <ProjectGuid>df33b595-c880-4494-85dd-b436aa2e9edf</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
-      <Project>59df4cff-035e-4548-baad-8b4a7eac4fb4</Project>
-    </ProjectReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 </Project>
