@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ProjectGuid></ProjectGuid>
+    <ProjectGuid>ac6ec207-883f-45b8-91b9-8b4d29fbdafc</ProjectGuid>
     <RootNamespace>IziHardGames.Playgrounds.ForEfCore</RootNamespace>
+    <Author>Tran Ngoc Anh</Author>
+    <Company>IziHardGames</Company>
   </PropertyGroup>
-
 </Project>
