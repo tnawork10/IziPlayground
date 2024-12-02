@@ -12,12 +12,23 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        var date = new DateTime(2024, 12, 30);
-        Console.WriteLine(DateOnly.FromDateTime(date).ToString());
-        Console.WriteLine(JsonSerializer.Serialize(DateOnly.FromDateTime(date)));
 
-        await ParallelForEach.RunForeachToArrayWrite();
+        var etor = GetEnumerator();
+        var etor2 = GetEnumerator();
+        var type = etor.GetType();
+        Console.WriteLine(type.AssemblyQualifiedName);
+        Console.WriteLine(type.IsValueType);
+        Console.WriteLine(type.IsClass);
+        Console.WriteLine(etor == etor2);
+
+
+        var source = new List<int>();
+        var etorList = source.GetEnumerator();
     }
 
+    public static IEnumerable<int> GetEnumerator()
+    {
+        yield return 0;
+    }
 
 }
