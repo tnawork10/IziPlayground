@@ -69,7 +69,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IziKeycloak", "src\asp.net\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "console", "console", "{D1B42D5D-E02C-4313-9624-4F64C8E9D01A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFlow", "src\console\DataFlow\DataFlow.csproj", "{C01396BF-7B08-43B5-9088-1B3898C34B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataFlow", "src\console\DataFlow\DataFlow.csproj", "{C01396BF-7B08-43B5-9088-1B3898C34B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziCassandra", "src\asp.net\IziCassandra\IziCassandra.csproj", "{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -161,6 +163,10 @@ Global
 		{C01396BF-7B08-43B5-9088-1B3898C34B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C01396BF-7B08-43B5-9088-1B3898C34B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C01396BF-7B08-43B5-9088-1B3898C34B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -186,6 +192,7 @@ Global
 		{771CBFBF-6873-4E6E-8B34-2AA885723249} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{D1B42D5D-E02C-4313-9624-4F64C8E9D01A} = {59631D35-CE44-4A38-8BD3-0110F7B831EE}
 		{C01396BF-7B08-43B5-9088-1B3898C34B88} = {D1B42D5D-E02C-4313-9624-4F64C8E9D01A}
+		{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}
