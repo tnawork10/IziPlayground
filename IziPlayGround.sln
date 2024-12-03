@@ -72,8 +72,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataFlow", "src\console\DataFlow\DataFlow.csproj", "{C01396BF-7B08-43B5-9088-1B3898C34B88}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziCassandra", "src\asp.net\IziCassandra\IziCassandra.csproj", "{7C4E490F-BB47-4E15-9BEF-89233DC1BD7D}"
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreMapping", "asp.net\EFCoreMapping\EFCoreMapping.csproj", "{A3FF1251-CD80-4661-989B-5F3811309D11}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicExpresso", "playground\DynamicExpresso\DynamicExpresso.csproj", "{215DFDFF-2957-46CF-98BE-289B7F058156}"
 EndProject
 Global
