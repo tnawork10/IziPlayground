@@ -61,7 +61,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IziTracings", "..\IziOpenTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueObjects", "src\asp.net\ValueObjects\ValueObjects.csproj", "{BBC43426-ED66-4BF5-BF9F-767D6370F3A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMapping", "asp.net\EFCoreMapping\EFCoreMapping.csproj", "{A3FF1251-CD80-4661-989B-5F3811309D11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreMapping", "asp.net\EFCoreMapping\EFCoreMapping.csproj", "{A3FF1251-CD80-4661-989B-5F3811309D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicExpresso", "playground\DynamicExpresso\DynamicExpresso.csproj", "{215DFDFF-2957-46CF-98BE-289B7F058156}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{A3FF1251-CD80-4661-989B-5F3811309D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3FF1251-CD80-4661-989B-5F3811309D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3FF1251-CD80-4661-989B-5F3811309D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{215DFDFF-2957-46CF-98BE-289B7F058156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{215DFDFF-2957-46CF-98BE-289B7F058156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{215DFDFF-2957-46CF-98BE-289B7F058156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{215DFDFF-2957-46CF-98BE-289B7F058156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
