@@ -30,6 +30,7 @@ namespace EfCoreQuery
             builder.Services.AddDbContextPool<CompositeIndexScanDbContext>(x => x.UseNpgsql(csIndex).UseSnakeCaseNamingConvention());
 
             builder.Services.AddControllers();
+            builder.Services.AddHostedService<QueryBackgroundService>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

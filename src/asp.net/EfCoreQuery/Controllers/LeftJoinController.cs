@@ -120,8 +120,9 @@ namespace EfCoreQuery.Controllers
         public async Task<IActionResult> CompositeWhereProp()
         {
             // error
-            var result = await context.CompositeKeyJoins.Where(x => x.Key == new { IdPart1 = 5, IdPart2 = 5 }).FirstOrDefaultAsync();
-            return Ok(result);
+            //var result = await context.CompositeKeyJoins.Where(x => x.Key == new { IdPart1 = 5, IdPart2 = 5 }).FirstOrDefaultAsync();
+            //return Ok(result);
+            return NoContent();
         }
 
         [HttpPost(nameof(CompositeWherePropTyped))]

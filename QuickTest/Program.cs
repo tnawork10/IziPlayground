@@ -19,8 +19,8 @@ class Program
         var reg = new RegExReplaceForExcelFormula();
         var v2 = new ReplaceForExcelFormula();
 
-        var input = "stack СТЕПЕНЬ(3,СТЕПЕНЬ(5,2))asd asd +asd a=do\r\nasda СТЕПЕНЬ(3,2+asda) asda\r\nasdassd СТЕПЕНЬ(3,СТЕПЕНЬ(5,2))aaaa ()asldklak\r\nСТЕПЕНЬ(3,СТЕПЕНЬ(СТЕПЕНЬ((1+1),2),2)) +++ ()asd ()";
-        //var input = "СТЕПЕНЬ(3,2)";
+        var input = "stack пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(3,пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(5,2))asd asd +asd a=do\r\nasda пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(3,2+asda) asda\r\nasdassd пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(3,пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(5,2))aaaa ()asldklak\r\nпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(3,пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅпїЅпїЅпїЅпїЅ((1+1),2),2)) +++ ()asd ()";
+        //var input = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(3,2)";
         var res = reg.ReplaceMathPow(input);
         var res2 = v2.Replace(input);
         Console.WriteLine(res2);
@@ -28,11 +28,11 @@ class Program
         
     public class ReplaceForExcelFormula
     {
-        public const string SEQ_OPEN = "СТЕПЕНЬ(";
+        public const string SEQ_OPEN = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ(";
         public const string SEQ_CLOSE = ")";
         public const char SKIP_OPEN = '(';
         public const char SKIP_CLOSE = ')';
-        public static readonly Regex regex = new Regex(@"СТЕПЕНЬ\(", RegexOptions.Singleline);
+        public static readonly Regex regex = new Regex(@"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\(", RegexOptions.Singleline);
         public const string REPLACE_POW = "Math.Pow(";
 
         public string Replace(string input)
@@ -43,11 +43,11 @@ class Program
 
     public class RegExReplaceForExcelFormula
     {
-        public const string FUNC_NAME_MATH_POW = "СТЕПЕНЬ";
+        public const string FUNC_NAME_MATH_POW = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ";
         public readonly Regex regex = new Regex(PATTERN_MATH_POW, RegexOptions.Singleline | RegexOptions.IgnorePatternWhitespace);
         public const string PATTERN_MATH_POW =
             @"(?<pow>
-                (?<openPow>СТЕПЕНЬ\(
+                (?<openPow>пїЅпїЅпїЅпїЅпїЅпїЅпїЅ\(
                 )+
                 (?<powinside>
                     [^()]*
@@ -69,7 +69,7 @@ class Program
         {
 
             var mathces = regex.Matches(input) as IEnumerable<Match>;
-            // по умолчанию mathces отстортирован по индексу в направлении поиска тексте (слева направо)
+            // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ mathces пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
             foreach (var match in mathces)
             {
                 var grps = match.Groups;
