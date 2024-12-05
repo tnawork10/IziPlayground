@@ -21,7 +21,8 @@ namespace IziCassandra.Controllers
             using var root = ZnModuleActivity.ActivitySource.StartActivity(nameof(GetWeatherForecast), ActivityKind.Server, context);
 
             var v = new SequenceAggregator();
-            var text = await F.ReadAllTextAsync(@"C:\Users\ngoc\Downloads\Telegram Desktop\1d4a4d44-408b-427e-b1e2-d3c52d80b347");
+            //var text = await F.ReadAllTextAsync(@"C:\Users\ngoc\Downloads\Telegram Desktop\1d4a4d44-408b-427e-b1e2-d3c52d80b347");
+            var text = await F.ReadAllTextAsync(@"C:\Users\ivan\Downloads\Telegram Desktop\1d4a4d44-408b-427e-b1e2-d3c52d80b347");
             using var act0 = ZnModuleActivity.ActivitySource.StartActivity("ReadFile", ActivityKind.Server, root?.Context ?? default);
             var input = JsonSerializer.Deserialize<Serilized[]>(text);
             var list = new List<Task<ValueAtDateSequence>>();
@@ -39,6 +40,7 @@ namespace IziCassandra.Controllers
                     var seq = daily.ToSequenceAsSum();
                     subAct0?.Stop();
                     var subAct1 = ZnModuleActivity.ActivitySource.StartActivity($"Materialize {i}", ActivityKind.Server, act1?.Context ?? default);
+                    subAct1?.SetTag("custom.color", "green");
                     var mat = seq.MaterializeToArray();
                     subAct1?.Stop();
                     act1?.Stop();
