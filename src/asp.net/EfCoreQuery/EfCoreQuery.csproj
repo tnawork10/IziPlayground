@@ -8,7 +8,6 @@
     <Company>IziHardGames</Company>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
@@ -17,5 +16,12 @@
     <ProjectReference Include="..\..\..\EFCore\EFCore.csproj">
       <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
     </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"/>
+    <PackageReference Include="Dapper"/>
+    <PackageReference Include="EFCore.NamingConventions"/>
   </ItemGroup>
 </Project>

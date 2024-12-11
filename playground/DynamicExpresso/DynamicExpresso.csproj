@@ -7,7 +7,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DynamicExpresso.Core" Version="2.16.1" />
-    <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
+    <PackageReference Include="DynamicExpresso.Core" />
   </ItemGroup>
 </Project>

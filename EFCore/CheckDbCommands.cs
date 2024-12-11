@@ -2,7 +2,6 @@
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 
 namespace IziHardGames.Playgrounds.ForEfCore

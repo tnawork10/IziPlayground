@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualStudio.Web.CodeGeneration.Utils;
-using Serilog.Context;
-
-namespace WebAPI.Middlewares
+﻿namespace WebAPI.Middlewares
 {
     public class MiddlewareExplorer
     {

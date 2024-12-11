@@ -12,6 +12,8 @@ namespace Explore.Diagnostic
             Debug.WriteLine("This message will appear in the Output window of Visual Studio");
 
             await Task.Run(async () => await Task.Delay(TimeSpan.FromDays(1)));
+
+            //Debug.
         }
     }
 }

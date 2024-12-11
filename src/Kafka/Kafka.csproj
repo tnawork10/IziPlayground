@@ -10,8 +10,8 @@
   <PropertyGroup>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Confluent.Kafka" Version="2.4.0" />
-    <PackageReference Include="Streamiz.Kafka.Net" Version="1.5.1" />
-    <PackageReference Include="librdkafka.redist" Version="2.4.0" />
+    <PackageReference Include="Confluent.Kafka" />
+    <PackageReference Include="Streamiz.Kafka.Net" />
+    <PackageReference Include="librdkafka.redist" />
   </ItemGroup>
 </Project>
