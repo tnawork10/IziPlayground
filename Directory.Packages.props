@@ -68,10 +68,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0"/>
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.6"/>
+
     <PackageVersion Include="coverlet.collector" Version="6.0.0" />
+
     <PackageVersion Include="xunit" Version="2.5.3"/>
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.3"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Testcontainers" Version="3.8.0"/>
+    <PackageVersion Include="Testcontainers.PostgreSql" Version="3.8.0"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -100,6 +113,9 @@
 
   <ItemGroup>
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+
+    <PackageVersion Include="Microsoft.OpenApi" Version="1.6.22" />
+    <PackageVersion Include="Microsoft.OpenApi.Readers" Version="1.6.22" />
   </ItemGroup>
 
   <ItemGroup>
