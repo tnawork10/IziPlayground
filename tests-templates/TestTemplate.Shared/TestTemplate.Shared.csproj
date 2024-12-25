@@ -38,4 +38,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\WebAPI\WebAPI.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Asserts\" />
+  </ItemGroup>
 </Project>
