@@ -22,18 +22,7 @@ partial class Program
         //var spanHours = TimeSpan.FromHours(tHours);
         //var dtFinal = DateTime.MinValue + spanHours;        
 
-        var start = new DateTime(new DateOnly(2024, 08, 01), default, DateTimeKind.Unspecified);
-        var end = new DateTime(new DateOnly(2024, 08, 31), default, DateTimeKind.Unspecified);
-        var dif = (end - start).TotalDays;
-        var difH = (end - start).TotalHours;
-        Console.WriteLine();
-    }
-}
+        DateTimeAndTimeSpan.Run();
 
-public class HttpExceptionHandling
-{
-    internal static async Task Run()
-    {
-        throw new NotImplementedException();
     }
 }

@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTemplate.Shared", "test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.UnitTest", "tests\Example.UnitTest\Example.UnitTest.csproj", "{A39551C5-DB30-4EF7-A382-8D0D3A282D08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApacheCassandra", "src\ApacheCassandra\ApacheCassandra.csproj", "{19388729-B1F5-436A-A6A7-855A1E4282A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{A39551C5-DB30-4EF7-A382-8D0D3A282D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A39551C5-DB30-4EF7-A382-8D0D3A282D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A39551C5-DB30-4EF7-A382-8D0D3A282D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -224,6 +230,7 @@ Global
 		{91A00FED-D888-49D9-A843-85920FCC748A} = {D1B42D5D-E02C-4313-9624-4F64C8E9D01A}
 		{FC8AA8DD-D281-449A-BF36-FB860AAD9444} = {A6C6D77B-DA23-4904-A6C1-F91947A9A716}
 		{A39551C5-DB30-4EF7-A382-8D0D3A282D08} = {A515F07A-B8A2-4F57-9535-4101217A8E7B}
+		{19388729-B1F5-436A-A6A7-855A1E4282A3} = {59631D35-CE44-4A38-8BD3-0110F7B831EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}
