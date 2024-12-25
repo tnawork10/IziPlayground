@@ -1,0 +1,9 @@
+﻿
+// Auto-generated file
+namespace GeneratedNamespace
+{
+    public class MyGeneratedClass
+    {
+        public string Message => "Hello, T4!";
+    }
+}

@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 
 namespace СommissioningService.IntegrationTests;
 
-[Collection(nameof(FixColl))]
+[Collection(nameof(FixCollection))]
 public class Fixtures : IClassFixture<FixB>
 {
     private readonly FixA a;
@@ -52,8 +52,8 @@ public class FixB
     }
 }
 
-[CollectionDefinition(nameof(FixColl))]
-public class FixColl : ICollectionFixture<FixA>, ICollectionFixture<FixC>
+[CollectionDefinition(nameof(FixCollection))]
+public class FixCollection : ICollectionFixture<FixA>, ICollectionFixture<FixC>
 {
 
 }
