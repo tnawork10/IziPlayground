@@ -3,14 +3,16 @@
     using Cassandra;
     using Cassandra.DataStax.Auth;
     using OpenTelemetry;
-    //using Cassandra.OpenTelemetry;
+    using OpenTelemetry.Instrumentation.Cassandra;
+
 
     public class TestWritter
     {
         ICluster cluster = Cluster.Builder()
         .AddContactPoint("127.0.0.1")
-        //.WithOpenTelemetryInstrumentation()
+        .WithOpenTelemetryMetrics()
         .WithAuthProvider(new DseGssapiAuthProvider())
         .Build();
+        //OpenTelemetry.Instrumentation.Cassandra.CassandraBuilderExtensions.
     }
 }

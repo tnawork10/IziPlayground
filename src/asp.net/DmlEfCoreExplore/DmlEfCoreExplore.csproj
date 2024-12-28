@@ -13,6 +13,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design"/>
     <PackageReference Include="System.Threading.Tasks.Dataflow"/>
     <PackageReference Include="Swashbuckle.AspNetCore"/>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">

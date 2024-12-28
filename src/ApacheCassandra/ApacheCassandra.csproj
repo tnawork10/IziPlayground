@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="CassandraCSharpDriver" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Cassandra" />
+    <PackageReference Include="OpenTelemetry" />
   </ItemGroup>
 
   <ItemGroup>
