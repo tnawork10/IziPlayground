@@ -8,11 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="CassandraCSharpDriver" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj" />
   </ItemGroup>
-  
+
 
 </Project>

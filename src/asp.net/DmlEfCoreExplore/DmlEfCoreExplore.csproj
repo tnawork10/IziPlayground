@@ -11,6 +11,8 @@
     <PackageReference Include="EFCore.NamingConventions"/>
     <PackageReference Include="EFCore.BulkExtensions"/>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design"/>
+    <PackageReference Include="System.Threading.Tasks.Dataflow"/>
+    <PackageReference Include="Swashbuckle.AspNetCore"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">

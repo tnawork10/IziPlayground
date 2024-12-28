@@ -8,5 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="CassandraCSharpDriver" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Cassandra" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="configs\" />
   </ItemGroup>
 </Project>

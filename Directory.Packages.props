@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageVersion Include="System.Threading.Tasks.Dataflow" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageVersion Include="EFCore.BulkExtensions" Version="8.1.1" />
   </ItemGroup>
 
@@ -124,6 +128,21 @@
     <PackageVersion Include="Microsoft.Identity.Web" Version="2.15.2" />
     <PackageVersion Include="Microsoft.Identity.Web.DownstreamApi" Version="2.15.2" />
     <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="OpenTelemetry" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.12" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="0.5.0-beta.6" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Cassandra" Version="1.0.0-beta.1" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Console" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.9.0" />
+    <PackageVersion Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.9.0-beta.2"/>
+    <PackageVersion Include="OpenTelemetry.Exporter.Zipkin" Version="1.9.0" />
   </ItemGroup>
 
   <ItemGroup>

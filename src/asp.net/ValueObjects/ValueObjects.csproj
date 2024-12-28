@@ -12,4 +12,9 @@
       <Project>59df4cff-035e-4548-baad-8b4a7eac4fb4</Project>
     </ProjectReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference>Microsoft.EntityFrameworkCore</PackageReference>
+  </ItemGroup>
+
 </Project>
