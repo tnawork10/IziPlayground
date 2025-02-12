@@ -15,14 +15,7 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        //var dt = new DateTime(new DateOnly(2024, 12, 31), new TimeOnly(23, 59, 59), DateTimeKind.Unspecified);
-        //var ts = (dt - DateTimeOffset.UnixEpoch).TotalMilliseconds;
-        //var span = TimeSpan.FromMilliseconds(ts);
-        //var tHours = (long)span.TotalHours;
-        //var spanHours = TimeSpan.FromHours(tHours);
-        //var dtFinal = DateTime.MinValue + spanHours;        
-
-        DateTimeAndTimeSpan.Run();
+        var dtUtc = DateTime.UtcNow;
 
     }
 }
