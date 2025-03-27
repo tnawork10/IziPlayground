@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IziAsyncEnumerables", "src\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A515F07A-B8A2-4F57-9535-4101217A8E7B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B89245B2-0568-4AC9-B2F8-589D5B3E72B1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Solution Items", ".Solution Items", "{B89245B2-0568-4AC9-B2F8-589D5B3E72B1}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.env = .env
@@ -90,6 +90,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4", "t4\T4\T4.csproj", "{4E4FB2A3-59A8-49E3-B419-3A67B5583092}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApacheCassandra", "src\ApacheCassandra\ApacheCassandra.csproj", "{19388729-B1F5-436A-A6A7-855A1E4282A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Master", "src\asp.net\Service.Master\Service.Master.csproj", "{F691D044-EC01-4386-A484-0067CFEFBDDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Slave", "src\asp.net\Service.Slave\Service.Slave.csproj", "{962D6EB5-8189-4536-BB2F-A3F7FB025138}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -209,6 +213,14 @@ Global
 		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19388729-B1F5-436A-A6A7-855A1E4282A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F691D044-EC01-4386-A484-0067CFEFBDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F691D044-EC01-4386-A484-0067CFEFBDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F691D044-EC01-4386-A484-0067CFEFBDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F691D044-EC01-4386-A484-0067CFEFBDDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962D6EB5-8189-4536-BB2F-A3F7FB025138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962D6EB5-8189-4536-BB2F-A3F7FB025138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962D6EB5-8189-4536-BB2F-A3F7FB025138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962D6EB5-8189-4536-BB2F-A3F7FB025138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -240,6 +252,8 @@ Global
 		{A39551C5-DB30-4EF7-A382-8D0D3A282D08} = {A515F07A-B8A2-4F57-9535-4101217A8E7B}
 		{4E4FB2A3-59A8-49E3-B419-3A67B5583092} = {9662DE70-7FDF-4D6A-9D44-AA876D4EE742}
 		{19388729-B1F5-436A-A6A7-855A1E4282A3} = {59631D35-CE44-4A38-8BD3-0110F7B831EE}
+		{F691D044-EC01-4386-A484-0067CFEFBDDF} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
+		{962D6EB5-8189-4536-BB2F-A3F7FB025138} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

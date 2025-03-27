@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IziPlayGround.Server.Controllers
 {
+
     [ApiController]
     [Route("[controller]")]
     public class HieraarchiesController : ControllerBase

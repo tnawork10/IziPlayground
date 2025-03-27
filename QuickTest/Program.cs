@@ -15,7 +15,17 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        var dtUtc = DateTime.UtcNow;
 
+        var v = Task.Run(() =>
+        {
+            Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+            Console.WriteLine("Done sleep");
+            return 100;
+        });
+
+        Console.WriteLine("Begin wait");
+        await v;
+        //var v1 = v.Result;
+        Console.WriteLine("Finish");
     }
 }
