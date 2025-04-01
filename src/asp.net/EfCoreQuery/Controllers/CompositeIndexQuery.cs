@@ -8,6 +8,7 @@ using Npgsql;
 
 namespace EfCoreQuery.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class CompositeIndexQuery(QueryDbContext context, NpgsqlConnectionStringBuilder csBuilder, IServiceProvider serviceProvider) : ControllerBase

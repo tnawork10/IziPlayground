@@ -13,7 +13,14 @@
         {
             Console.WriteLine("Middleware before invoke");
             // before request
-            await _next(context);
+            try
+            {
+                await _next(context);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             // after request
             Console.WriteLine("Middleware after invoke");
         }

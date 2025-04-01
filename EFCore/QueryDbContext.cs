@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IziHardGames.Playgrounds.ForEfCore
 {
+
     public class QueryDbContext : DbContext
     {
         public DbSet<EntQueryOne> Ones { get; set; }

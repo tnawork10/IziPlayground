@@ -15,14 +15,17 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        //var dt = new DateTime(new DateOnly(2024, 12, 31), new TimeOnly(23, 59, 59), DateTimeKind.Unspecified);
-        //var ts = (dt - DateTimeOffset.UnixEpoch).TotalMilliseconds;
-        //var span = TimeSpan.FromMilliseconds(ts);
-        //var tHours = (long)span.TotalHours;
-        //var spanHours = TimeSpan.FromHours(tHours);
-        //var dtFinal = DateTime.MinValue + spanHours;        
 
-        DateTimeAndTimeSpan.Run();
+        var v = Task.Run(() =>
+        {
+            Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+            Console.WriteLine("Done sleep");
+            return 100;
+        });
 
+        Console.WriteLine("Begin wait");
+        await v;
+        //var v1 = v.Result;
+        Console.WriteLine("Finish");
     }
 }

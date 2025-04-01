@@ -10,6 +10,7 @@ namespace EfCoreQuery
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            return;
             using var scope = provider.CreateScope();
             //var context = scope.ServiceProvider.GetRequiredService<QueryDbContext>();
             var context = scope.ServiceProvider.GetRequiredService<QueryDbContext>();
