@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Running;
+﻿using BenchBcl.Bench_IEnumerables;
+using BenchmarkDotNet.Running;
 
 namespace BenchBcl
 {
@@ -7,7 +8,8 @@ namespace BenchBcl
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            BenchmarkRunner.Run<IEnumerableAlloc>();
+            BenchmarkRunner.Run<IEnumerableOrderedBench>();
+            //BenchmarkRunner.Run<IEnumerableAlloc>();
             //var summary = BenchmarkRunner.Run<StringConcatenationBenchmarks>();
         }
     }
