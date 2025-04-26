@@ -1,0 +1,14 @@
+﻿services:
+ devplayground:
+  image: 192.168.190.125/devplayground:latest
+  environment: 
+   - "GCE_OTLP_ENABLE_ZIPKIN=true"
+   - "OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317"
+  ports:
+   - "60201:8080"
+  networks:
+   - shared-net
+
+networks:
+ shared-net:
+  # external: true
