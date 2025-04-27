@@ -1,9 +1,9 @@
-
-using IziHardGames.Observing.Tracing;
+using DmlEfCoreExplore.Application;
+using DmlEfCoreExplore.Infrastructure;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
+using Scalar.AspNetCore;
 
 namespace DmlEfCoreExplore
 {
@@ -20,16 +20,22 @@ namespace DmlEfCoreExplore
             var portVal = $";port={port}";
 
             var cs = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=dml_efcore";
+            var csPool = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=pooled";
 
             var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
             // Add services to the container.
 
-            builder.Services.AddZipkin(new OtlpParams()
-            {
-                HostName = "localhost",
-                MainSourceName = "DmlEfCoreExplore.Source",
-                ServiceName = "DmlEfCoreExplore.Service",
-            });
+            //builder.Services.AddZipkin(new OtlpParams()
+            //{
+            //    HostName = "localhost",
+            //    MainSourceName = "DmlEfCoreExplore.Source",
+            //    ServiceName = "DmlEfCoreExplore.Service",
+            //});
+
+            builder.Services.AddSingleton<SingletonProxy>();
+            builder.Services.AddPooledDbContextFactory<PooledDbContext>(x => x.UseNpgsql(csPool).UseSnakeCaseNamingConvention());
+            //builder.Services.AddDbContextPool<PooledDbContext>(x => x.UseNpgsql(csPool).UseSnakeCaseNamingConvention());
+            builder.Services.AddDbContext<PooledDbContext>(x => x.UseNpgsql(csPool).UseSnakeCaseNamingConvention());
 
             builder.Services.AddDbContextPool<DmlResearchContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());
             builder.Services.AddControllers();
@@ -42,8 +48,11 @@ namespace DmlEfCoreExplore
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwagger(options =>
+                {
+                    options.RouteTemplate = "/openapi/{documentName}.json";
+                });
+                app.MapScalarApiReference();
             }
 
             app.UseAuthorization();

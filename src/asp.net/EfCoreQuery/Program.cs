@@ -27,7 +27,7 @@ namespace EfCoreQuery
 
             var npsqlCsb = new NpgsqlConnectionStringBuilder(cs);
             builder.Services.AddSingleton<NpgsqlConnectionStringBuilder>(npsqlCsb);
-            builder.Services.AddZipkin(new OtlpParams() { HostName = "localhost", MainSourceName = "EfCoreQuery.Source", ServiceName = "EfCoreQuery.Service" });
+            //builder.Services.AddZipkin(new OtlpParams() { HostName = "localhost", MainSourceName = "EfCoreQuery.Source", ServiceName = "EfCoreQuery.Service" });
             builder.Services.AddDbContextPool<TypesDbContext>(x => x.UseNpgsql(csTypes).UseSnakeCaseNamingConvention());
             builder.Services.AddDbContextPool<QueryDbContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());
             builder.Services.AddPooledDbContextFactory<QueryDbContext>(x => x.UseNpgsql(cs).UseSnakeCaseNamingConvention());

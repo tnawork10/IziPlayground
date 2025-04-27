@@ -124,4 +124,12 @@
     <PackageVersion Include="JetBrains.dotMemoryUnit" Version="3.2.20220510" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="IziHardGames.Observability" Version="0.0.1"></PackageVersion>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageVersion Include="Bogus" Version="35.6.3" />
+  </ItemGroup>
 </Project>

@@ -8,18 +8,16 @@
     <Company>IziHardGames</Company>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="EFCore.NamingConventions"/>
-    <PackageReference Include="EFCore.BulkExtensions"/>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design"/>
-    <PackageReference Include="System.Threading.Tasks.Dataflow"/>
-    <PackageReference Include="Swashbuckle.AspNetCore"/>
+    <PackageReference Include="EFCore.NamingConventions" />
+    <PackageReference Include="EFCore.BulkExtensions" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
+    <PackageReference Include="System.Threading.Tasks.Dataflow" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
-
+    <PackageReference Include="Bogus" />
+    <PackageReference Include="Scalar.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
-      <Project>59df4cff-035e-4548-baad-8b4a7eac4fb4</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\EFCore\EFCore.csproj">
       <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
     </ProjectReference>

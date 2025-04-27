@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DmlEfCoreExplore.Controllers
 {
+
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
