@@ -13,15 +13,7 @@ namespace EfCoreQuery.Controllers
     [ApiController]
     public class CompositeIndexScan(CompositeIndexScanDbContext context) : ControllerBase
     {
-        [HttpPost(nameof(InitDb))]
-        public async Task<IActionResult> InitDb()
-        {
-            await context.Database.EnsureDeletedAsync();
-            await context.Database.EnsureCreatedAsync();
-            context.Init();
-            await context.SaveChangesAsync();
-            return Ok(await context.EntityiesWithCompositeIndex.CountAsync());
-        }
+  
 
         [HttpPost(nameof(GetAny10))]
         public async Task<IActionResult> GetAny10()
