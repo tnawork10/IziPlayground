@@ -15,13 +15,9 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        Console.WriteLine(double.IsNormal(double.Epsilon));
-        Console.WriteLine(double.IsNormal(0));
-        Console.WriteLine(double.IsRealNumber(0));
-        Console.WriteLine(double.IsRealNumber(double.NaN));
-        Console.WriteLine(double.IsRealNumber(double.NegativeInfinity));
-        Console.WriteLine(double.IsRealNumber(.5f));
-        //var utcTime = time.ToUniversalTime();
-        //var deltaT = time - DateTime.UnixEpoch;
+        var json = JsonSerializer.Serialize(new { Span = TimeSpan.MaxValue });
+        var node = JsonObject.Parse(json);
+        var span = node["Span"];
+        var val = span.Deserialize<TimeSpan>();
     }
 }

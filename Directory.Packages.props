@@ -122,5 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="JetBrains.dotMemoryUnit" Version="3.2.20220510" />
+    <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
 </Project>
