@@ -126,7 +126,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageVersion Include="IziHardGames.Observability" Version="0.0.1"></PackageVersion>
+    <!--<PackageVersion Include="IziHardGames.Observability" Version="0.0.1"></PackageVersion>-->
   </ItemGroup>
   
   <ItemGroup>

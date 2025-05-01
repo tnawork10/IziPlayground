@@ -16,6 +16,12 @@ namespace ZnModelModule.Shared.InternalCassandra.Storage
             this.value = value;
         }
 
+        public ValueAtDate(DateTime dt, double? value)
+        {
+            this.timestamp = (long)(dt - DateTime.UnixEpoch).TotalMilliseconds;
+            this.value = value;
+        }
+
         public TimeSpan TimestampAsDateTimeSpan()
         {
             return TimeSpan.FromMilliseconds(timestamp);
