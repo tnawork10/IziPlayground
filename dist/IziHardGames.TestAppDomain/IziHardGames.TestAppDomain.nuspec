@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+
+  <metadata>
+    <id>IziHardGames.TestAppDomain</id>
+    <version>0.0.2</version>
+    <title>Core.TestEnvironments.WebApps</title>
+    <authors>GCE</authors>
+    <owners></owners>
+    <description>Test apps</description>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <tags></tags>
+    <dependencies>
+      <group targetFramework="net8.0">
+        <!--<dependency id="Platforma.ErrorHandling" version="8.0.1" />
+        <dependency id="Swashbuckle.AspNetCore" version="8.0.0" />
+        <dependency id="Swashbuckle.AspNetCore.SwaggerGen" version="8.1.1" />
+        <dependency id="Swashbuckle.AspNetCore.Annotations" version="8.1.1" />
+        <dependency id="Swashbuckle.AspNetCore.Swagger" version="8.1.1" />-->
+      </group>
+      <group>
+      </group>
+    </dependencies>
+
+    <frameworkReferences>
+      <group targetFramework="net8.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+
+    <contentFiles>
+      <files include="**\*.deps.json" buildAction="Content" copyToOutput="true" flatten="true"/>
+      <files include="**\appsettings.*json" buildAction="Content" copyToOutput="true" flatten="true"/>
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="bin\Debug\net8.0\IziHardGames.TestAppDomain.dll" target="lib\net8.0" />
+    <file src="bin\Debug\net8.0\IziHardGames.TestAppDomain.pdb" target="lib\net8.0" />
+    <file src="bin\Debug\net8.0\IziHardGames.TestAppDomain.xml" target="lib\net8.0"/>
+    <!--<file src="bin\Debug\net8.0\*.deps.json" target="contentFiles\any\any"/>
+    <file src="bin\Debug\net8.0\appsettings.*json" target="contentFiles\any\any"/>-->
+    <file src="LICENSE" />
+    <file src="README.md" />
+  </files>
+</package>
+

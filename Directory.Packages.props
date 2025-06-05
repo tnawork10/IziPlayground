@@ -20,6 +20,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.10" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="System.Threading.Tasks.Dataflow" Version="7.0.0" />
@@ -132,5 +133,7 @@
 
   <ItemGroup>
     <PackageVersion Include="Bogus" Version="35.6.3" />
+    <PackageVersion Include="LazyCache" Version="2.4.0" />
+    <PackageVersion Include="LazyCache.AspNetCore" Version="2.4.0" />
   </ItemGroup>
 </Project>

@@ -15,9 +15,7 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        var json = JsonSerializer.Serialize(new { Span = TimeSpan.MaxValue });
-        var node = JsonObject.Parse(json);
-        var span = node["Span"];
-        var val = span.Deserialize<TimeSpan>();
+        DateTimeAndTimeSpan.Run();
+
     }
 }

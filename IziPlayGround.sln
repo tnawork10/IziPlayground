@@ -109,6 +109,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebFactory.B", "libs\Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.IntegrationTests", "tests\Example.IntegrationTests\Example.IntegrationTests.csproj", "{3EC1F0F4-351A-4B78-B125-AD2F2F96573D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "local-packages", "local-packages", "{EC6A28A5-E540-4931-AC6E-3012A9465DA4}"
+	ProjectSection(SolutionItems) = preProject
+		local-packages\IziHardGames.TestAppDomain.0.0.1.nupkg = local-packages\IziHardGames.TestAppDomain.0.0.1.nupkg
+		local-packages\IziHardGames.TestAppDomain.0.0.2.nupkg = local-packages\IziHardGames.TestAppDomain.0.0.2.nupkg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dist", "dist", "{39589E78-90EE-4E38-BE9B-EC227FFC5053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.TestAppDomain", "dist\IziHardGames.TestAppDomain\IziHardGames.TestAppDomain.csproj", "{AD5BA1D2-16B6-45A7-8A06-AA120D0FFF0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.MultiDomainApp", "src\asp.net\IziHardGames.MultiDomainApp\IziHardGames.MultiDomainApp.csproj", "{200D82FC-1C8C-49A2-8E6F-7BA3375B299C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs-test", "libs-test", "{E024981C-397A-4226-A176-74E52A7D53B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.Domain1", "libs-test\IziHardGames.Domain1\IziHardGames.Domain1.csproj", "{60D9D37F-3D4B-4A4D-A5F8-EB4306024263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.Domain2", "libs-test\IziHardGames.Domain2\IziHardGames.Domain2.csproj", "{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -259,6 +277,22 @@ Global
 		{3EC1F0F4-351A-4B78-B125-AD2F2F96573D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC1F0F4-351A-4B78-B125-AD2F2F96573D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC1F0F4-351A-4B78-B125-AD2F2F96573D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5BA1D2-16B6-45A7-8A06-AA120D0FFF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5BA1D2-16B6-45A7-8A06-AA120D0FFF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5BA1D2-16B6-45A7-8A06-AA120D0FFF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5BA1D2-16B6-45A7-8A06-AA120D0FFF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200D82FC-1C8C-49A2-8E6F-7BA3375B299C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200D82FC-1C8C-49A2-8E6F-7BA3375B299C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200D82FC-1C8C-49A2-8E6F-7BA3375B299C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200D82FC-1C8C-49A2-8E6F-7BA3375B299C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -298,6 +332,10 @@ Global
 		{BCDA0AB3-3D1A-413E-AEF7-A5BFFF07A582} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{10F8C563-467B-49B9-A0D6-3452C790E7F6} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{3EC1F0F4-351A-4B78-B125-AD2F2F96573D} = {A515F07A-B8A2-4F57-9535-4101217A8E7B}
+		{AD5BA1D2-16B6-45A7-8A06-AA120D0FFF0E} = {39589E78-90EE-4E38-BE9B-EC227FFC5053}
+		{200D82FC-1C8C-49A2-8E6F-7BA3375B299C} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
+		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263} = {E024981C-397A-4226-A176-74E52A7D53B2}
+		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F} = {E024981C-397A-4226-A176-74E52A7D53B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

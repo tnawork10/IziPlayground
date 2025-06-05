@@ -1,0 +1,6 @@
+@IziHardGames.MultiDomainApp_HostAddress = http://localhost:5215
+
+GET {{IziHardGames.MultiDomainApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

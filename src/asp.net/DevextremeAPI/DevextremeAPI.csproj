@@ -6,8 +6,13 @@
     <ProjectGuid>df33b595-c880-4494-85dd-b436aa2e9edf</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
+    <RootNamespace>IziHardGames.DevExtremeAPI</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <PackageReference Include="Swashbuckle.AspNetCore" />
   </ItemGroup>
 </Project>
