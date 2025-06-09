@@ -8,6 +8,7 @@ using System.Text.Json.Nodes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileSystemGlobbing.Internal;
 using Microsoft.Extensions.Primitives;
+using VisioDiagrams;
 
 namespace QuickTest;
 
@@ -15,7 +16,6 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        DateTimeAndTimeSpan.Run();
-
+       await VisioDiagram.Explore();
     }
 }

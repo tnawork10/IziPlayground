@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="0" Name="Процесс" NameU="Process">
+			<PageProps>
+				<PageScale Unit="MM">0.039370078740157</PageScale>
+				<DrawingScale Unit="MM">0.039370078740157</DrawingScale>
+			</PageProps>
+			<Layer IX="0">
+				<Name>Соединительная линия</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Layer IX="1">
+				<Name>Блок-схема</Name>
+				<NameUniv>Flowchart</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="1" UniqueID="{A6731311-40D1-4706-A94D-7A19B391724A}" Name="Dynamic connector.1" NameU="Dynamic connector.1" Master="2">
+					<Text>Да</Text>
+					<XForm>
+						<PinX Unit="MM">6.450583763236497</PinX>
+						<PinY Unit="MM">5.118110236220472</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="2" UniqueID="{CCE544E0-7216-48B7-86FE-04F52D73A39C}" Name="Dynamic connector.44" NameU="Dynamic connector.44" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.407768802606579</PinX>
+						<PinY Unit="MM">3.838582677165354</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="3" UniqueID="{4E2A79B2-386D-4C0F-80D1-3835747FF04B}" Name="Decision" NameU="Decision" Master="4">
+					<Text>Условие?</Text>
+					<XForm>
+						<PinX Unit="MM">5.001272739614446</PinX>
+						<PinY Unit="MM">5.314960629921260</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="4" UniqueID="{4AEE8DA7-B5D9-4E98-B532-092613D59E63}" Name="Start/End.46" NameU="Start/End.46" Master="5">
+					<Text>Начало</Text>
+					<XForm>
+						<PinX Unit="MM">5.001272739614446</PinX>
+						<PinY Unit="MM">6.791338582677164</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="6" UniqueID="{AAAD4AF5-6A57-4C5A-ACD7-3E6C0BA1B979}" Name="Data" NameU="Data" Master="7">
+					<Text>Данные</Text>
+					<XForm>
+						<PinX Unit="MM">7.407768802606579</PinX>
+						<PinY Unit="MM">4.625984251968504</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="7" UniqueID="{3F3C1CB2-CDBB-4AC2-81E3-F6F986307E98}" Name="Process" NameU="Process" Master="8">
+					<Text>Процесс</Text>
+					<XForm>
+						<PinX Unit="MM">7.407768802606579</PinX>
+						<PinY Unit="MM">3.051181102362204</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="8" UniqueID="{923BAB1B-A7F1-4C7B-81F6-965849ABA37D}" Name="Start/End.18" NameU="Start/End.18" Master="5">
+					<Text>Конец</Text>
+					<XForm>
+						<PinX Unit="MM">7.407768802606576</PinX>
+						<PinY Unit="MM">1.574803149606299</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="9" UniqueID="{69E4E768-C38B-4D99-B02B-2A5EEF7C1A39}" Name="Dynamic connector.19" NameU="Dynamic connector.19" Master="2">
+					<Text>Хуй-Хуй</Text>
+					<XForm>
+						<PinX Unit="MM">5.001272739614446</PinX>
+						<PinY Unit="MM">6.102362204724409</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="10" UniqueID="{47824E8B-FC91-4A97-ABFF-7BB51BA7F150}" Name="Dynamic connector.20" NameU="Dynamic connector.20" Master="2">
+					<Text>Нет</Text>
+					<XForm>
+						<PinX Unit="MM">5.001272739614446</PinX>
+						<PinY Unit="MM">4.527559055118111</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="11" UniqueID="{E6B52F86-B60A-4EF9-9252-B8BFAB97F310}" Name="Dynamic connector.53" NameU="Dynamic connector.53" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.407768802606578</PinX>
+						<PinY Unit="MM">2.263779527559055</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="82" UniqueID="{3382D86E-C5F2-49CC-98CD-4AA9EBC149C9}" Name="Dynamic connector.82" NameU="Dynamic connector.82" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.958457778984527</PinX>
+						<PinY Unit="MM">2.509842519685038</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="81" UniqueID="{F08746E8-FA63-4DFA-B897-F7CAF793252F}" Name="Subprocess" NameU="Subprocess" Master="6">
+					<Text>Подпроцесс</Text>
+					<XForm>
+						<PinX Unit="MM">5.001272739614446</PinX>
+						<PinY Unit="MM">3.740157480314961</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Scratch>
+						<B>
+							<SolutionXML>
+								<HLURL:Hyperlinks xmlns:HLURL="urn:schemas-microsoft-com:office:visio:dghlinkext">
+									<HLURL:Hyperlink ID="1">
+										<HLURL:Description></HLURL:Description>
+										<HLURL:Address></HLURL:Address>
+										<HLURL:SubAddress>Подпроцесс</HLURL:SubAddress>
+										<HLURL:ExtraInfo></HLURL:ExtraInfo>
+										<HLURL:Default>0</HLURL:Default>
+										<HLURL:NewWindow>0</HLURL:NewWindow>
+									</HLURL:Hyperlink>
+								</HLURL:Hyperlinks>
+							</SolutionXML>
+						</B>
+					</Scratch>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="132" UniqueID="{A053DBDE-EEC5-4717-8D96-75262A06A690}" Name="Sheet.132" NameU="Sheet.132">
+					<XForm>
+						<PinX Unit="MM">1.933070866141726</PinX>
+						<PinY Unit="MM">4.133479304391758</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="4" Name="Подпроцесс" NameU="Subprocess">
+			<PageProps>
+				<PageScale Unit="MM">0.039370078740157</PageScale>
+				<DrawingScale Unit="MM">0.039370078740157</DrawingScale>
+			</PageProps>
+			<Layer IX="0">
+				<Name>Соединительная линия</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Layer IX="1">
+				<Name>Блок-схема</Name>
+				<NameUniv>Flowchart</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="1" UniqueID="{AB2FF0DA-52C9-48E4-8A9D-72DA00B626EC}" Name="Dynamic connector.9" NameU="Dynamic connector.9" Master="2">
+					<Text>Да</Text>
+					<XForm>
+						<PinX Unit="MM">6.289370078740158</PinX>
+						<PinY Unit="MM">3.289306578613156</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="2" UniqueID="{8622C7AB-57C6-4605-8B92-19E1D30ED8F5}" Name="Decision.37" NameU="Decision.37" Master="4">
+					<Text>Условие?</Text>
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">4.978409956819913</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="3" UniqueID="{F8E516DC-0B3C-4BA8-A59C-CBF21422EEB6}" Name="Dynamic connector.38" NameU="Dynamic connector.38" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">5.822961645923291</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="4" UniqueID="{2E7BE59E-B480-417D-9C8D-A48BB3527475}" Name="Dynamic connector.39" NameU="Dynamic connector.39" Master="2">
+					<Text>Нет</Text>
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">4.133858267716534</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="5" UniqueID="{524D888C-A0D7-40B9-8CDF-1BCB6C7F1C0B}" Name="Process.58" NameU="Process.58" Master="8">
+					<Text>Процесс</Text>
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">3.289306578613156</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="6" UniqueID="{CE5F734D-03F9-4CCD-907F-028CEE77DB6C}" Name="Dynamic connector.41" NameU="Dynamic connector.41" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">2.444754889509778</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="7" UniqueID="{63ADD2A3-FB1A-447D-8272-8A6853079139}" Name="Data.11" NameU="Data.11" Master="7">
+					<Text>Данные</Text>
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">6.667513335026671</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="8" UniqueID="{40D2CC1C-F626-424D-9ED6-E16D1B692649}" Name="Process.13" NameU="Process.13" Master="8">
+					<Text>Процесс</Text>
+					<XForm>
+						<PinX Unit="MM">5.797244094488190</PinX>
+						<PinY Unit="MM">1.600203200406400</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value></Value>
+						<Label>Стоимость</Label>
+					</Prop>
+					<Prop ID="2" Name="ProcessNumber" NameU="ProcessNumber">
+						<Value></Value>
+						<Label>Номер процесса</Label>
+					</Prop>
+					<Prop ID="3" Name="Owner" NameU="Owner">
+						<Value></Value>
+						<Label>Владелец</Label>
+					</Prop>
+					<Prop ID="4" Name="Function" NameU="Function">
+						<Value></Value>
+						<Label>Функция</Label>
+					</Prop>
+					<Prop ID="5" Name="StartDate" NameU="StartDate">
+						<Value></Value>
+						<Label>Дата начала</Label>
+					</Prop>
+					<Prop ID="6" Name="EndDate" NameU="EndDate">
+						<Value></Value>
+						<Label>Дата окончания</Label>
+					</Prop>
+					<Prop ID="7" Name="Status" NameU="Status">
+						<Value></Value>
+						<Label>Состояние</Label>
+					</Prop>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>

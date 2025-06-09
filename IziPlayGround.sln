@@ -127,6 +127,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.Domain1", "lib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.Domain2", "libs-test\IziHardGames.Domain2\IziHardGames.Domain2.csproj", "{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api3", "api3", "{1E634FA1-5268-41BC-9C1F-D4034BF1017D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioDiagrams", "src\api3\VisioDiagrams\VisioDiagrams.csproj", "{41153C73-7BB0-4432-97B6-82CA35A21FC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -293,6 +297,10 @@ Global
 		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -336,6 +344,7 @@ Global
 		{200D82FC-1C8C-49A2-8E6F-7BA3375B299C} = {E86BBE9A-B33A-4DC7-9742-1A1422A3740D}
 		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263} = {E024981C-397A-4226-A176-74E52A7D53B2}
 		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F} = {E024981C-397A-4226-A176-74E52A7D53B2}
+		{41153C73-7BB0-4432-97B6-82CA35A21FC4} = {1E634FA1-5268-41BC-9C1F-D4034BF1017D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

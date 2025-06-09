@@ -1,5 +1,4 @@
 
-using IziHardGames.Observing.Tracing;
 using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;

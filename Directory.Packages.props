@@ -136,4 +136,9 @@
     <PackageVersion Include="LazyCache" Version="2.4.0" />
     <PackageVersion Include="LazyCache.AspNetCore" Version="2.4.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="System.IO.Packaging" Version="9.0.5" />
+    <PackageVersion Include="NetOffice.Visio" Version="1.7.4.11" />
+  </ItemGroup>
 </Project>

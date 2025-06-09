@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ProjectGuid>99c140d0-10f6-486f-82e4-a02dad994380</ProjectGuid>
@@ -13,6 +13,7 @@
     <ProjectReference Include="..\EFCore\EFCore.csproj">
       <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
     </ProjectReference>
+    <ProjectReference Include="..\src\api3\VisioDiagrams\VisioDiagrams.csproj" />
     <ProjectReference Include="..\src\IziAsyncEnumerables\IziAsyncEnumerables.csproj">
       <Project>4d2f16ff-181c-4697-8a75-4213b63f7756</Project>
     </ProjectReference>
@@ -22,7 +23,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Moq"  />
+    <PackageReference Include="Moq" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 </Project>
