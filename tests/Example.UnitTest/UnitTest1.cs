@@ -1,11 +1,18 @@
+using System.Threading.Tasks;
+using Example.UnitTest.Fixtures;
+
 namespace Example.UnitTest
 {
-    public class UnitTest1
+    /// <summary>
+    ///  Each <see cref="ClassFixtureAsync"/> is new instance
+    /// </summary>
+    /// <param name="classFixtureAsync"></param>
+    public class UnitTest1(ClassFixtureAsync classFixtureAsync) : IClassFixture<ClassFixtureAsync>
     {
         [Fact]
-        public void Test1()
+        public async Task Test1()
         {
-
+            //await File.AppendAllLinesAsync("test.log", [classFixtureAsync.GetHashCode().ToString()]);
         }
     }
 }

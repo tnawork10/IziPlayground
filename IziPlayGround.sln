@@ -131,6 +131,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api3", "api3", "{1E634FA1-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioDiagrams", "src\api3\VisioDiagrams\VisioDiagrams.csproj", "{41153C73-7BB0-4432-97B6-82CA35A21FC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Library", "tests\Test.Library\Test.Library.csproj", "{FBA2A249-E016-4E43-8C22-316B568B7EBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -301,6 +303,10 @@ Global
 		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41153C73-7BB0-4432-97B6-82CA35A21FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -345,6 +351,7 @@ Global
 		{60D9D37F-3D4B-4A4D-A5F8-EB4306024263} = {E024981C-397A-4226-A176-74E52A7D53B2}
 		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F} = {E024981C-397A-4226-A176-74E52A7D53B2}
 		{41153C73-7BB0-4432-97B6-82CA35A21FC4} = {1E634FA1-5268-41BC-9C1F-D4034BF1017D}
+		{FBA2A249-E016-4E43-8C22-316B568B7EBF} = {A515F07A-B8A2-4F57-9535-4101217A8E7B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}
