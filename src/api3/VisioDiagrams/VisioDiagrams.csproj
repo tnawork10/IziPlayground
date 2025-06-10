@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="inputs\ShapeToSvg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="inputs\Visio.drawio.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

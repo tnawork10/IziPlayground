@@ -1,0 +1,511 @@
+﻿<Shape ID='148' Type='Group' LineStyle='9' FillStyle='9' TextStyle='9'>
+  <Cell N='PinX' V='5.027559212585119' />
+  <Cell N='PinY' V='1.877952803830254' />
+  <Cell N='Width' V='0.8854166666666666' />
+  <Cell N='Height' V='1.145833333333333' />
+  <Cell N='LocPinX' V='0.4427083333333333' F='Width*0.5' />
+  <Cell N='LocPinY' V='0.5729166666666665' F='Height*0.5' />
+  <Cell N='Angle' V='0' />
+  <Cell N='FlipX' V='0' />
+  <Cell N='FlipY' V='0' />
+  <Cell N='ResizeMode' V='0' />
+  <Cell N='ObjType' V='1' />
+  <Section N='User'>
+    <Row N='visNavOrder'>
+      <Cell N='Value' V='8000' />
+      <Cell N='Prompt' V='' F='No Formula' />
+    </Row>
+  </Section>
+  <Section N='Character'>
+    <Row IX='1'>
+      <Cell N='Font' V='Calibri' />
+      <Cell N='Color' V='0' />
+      <Cell N='Style' V='0' />
+      <Cell N='Case' V='0' />
+      <Cell N='Pos' V='0' />
+      <Cell N='FontScale' V='1' />
+      <Cell N='Size' V='0.1666666666666667' />
+      <Cell N='DblUnderline' V='0' />
+      <Cell N='Overline' V='0' />
+      <Cell N='Strikethru' V='0' />
+      <Cell N='DoubleStrikethrough' V='0' />
+      <Cell N='Letterspace' V='0' />
+      <Cell N='ColorTrans' V='0' />
+      <Cell N='AsianFont' V='0' />
+      <Cell N='ComplexScriptFont' V='0' />
+      <Cell N='ComplexScriptSize' V='-1' />
+      <Cell N='LangID' V='en-US' />
+    </Row>
+  </Section>
+  <Text>
+    <cp IX='0' />
+    <pp IX='0' />
+    <tp IX='0' />Это импортированный
+    <cp IX='1' />svg1234
+  </Text>
+  <Shapes>
+    <Shape ID='149' Type='Group' LineStyle='9' FillStyle='9' TextStyle='9'>
+      <Cell N='PinX' V='0.4427083333333333' F='Sheet.148!Width*0.5' />
+      <Cell N='PinY' V='0.5729166666666665' F='Sheet.148!Height*0.5' />
+      <Cell N='Width' V='0.8854166666666666' F='Sheet.148!Width*1' />
+      <Cell N='Height' V='1.145833333333333' F='Sheet.148!Height*1' />
+      <Cell N='LocPinX' V='0.4427083333333333' F='Width*0.5' />
+      <Cell N='LocPinY' V='0.5729166666666665' F='Height*0.5' />
+      <Cell N='Angle' V='0' />
+      <Cell N='FlipX' V='0' />
+      <Cell N='FlipY' V='0' />
+      <Cell N='ResizeMode' V='0' />
+      <Shapes>
+        <Shape ID='150' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.5208333333333359' F='Sheet.149!Width*0.58823529411765' />
+          <Cell N='PinY' V='0.5729166666666665' F='Sheet.149!Height*0.5' />
+          <Cell N='Width' V='0.7291666666666703' F='Sheet.149!Width*0.82352941176471' />
+          <Cell N='Height' V='1.145833333333333' F='Sheet.149!Height*1' />
+          <Cell N='LocPinX' V='0.3645833333333333' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.5729166666666665' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineColor' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='MoveTo' IX='1'>
+              <Cell N='X' V='0' F='Width*0' />
+              <Cell N='Y' V='0' F='Height*0' />
+            </Row>
+            <Row T='LineTo' IX='2'>
+              <Cell N='X' V='0.7291666666666666' F='Width*1' />
+              <Cell N='Y' V='0' F='Height*0' />
+            </Row>
+            <Row T='LineTo' IX='3'>
+              <Cell N='X' V='0.7291666666666666' F='Width*1' />
+              <Cell N='Y' V='1.145833333333333' F='Height*1' />
+            </Row>
+            <Row T='LineTo' IX='4'>
+              <Cell N='X' V='0' F='Width*0' />
+              <Cell N='Y' V='1.145833333333333' F='Height*1' />
+            </Row>
+            <Row T='LineTo' IX='5'>
+              <Cell N='X' V='0' F='Geometry1.X1' />
+              <Cell N='Y' V='0' F='Geometry1.Y1' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='151' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.1510416666666688' F='Sheet.149!Width*0.17058823529412' />
+          <Cell N='PinY' V='0.5677083333333384' F='Sheet.149!Height*0.49545454545455' />
+          <Cell N='Width' V='0.4166666666666687' F='Sheet.149!Width*0.47058823529412' />
+          <Cell N='Height' V='0' F='Sheet.149!Height*0' />
+          <Cell N='LocPinX' V='0.2083333333333333' F='Width*0.5' />
+          <Cell N='LocPinY' V='0' F='Height*0.5' />
+          <Cell N='Angle' V='-1.5707963267949' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='0' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='152' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.1041666666666672' F='Sheet.149!Width*0.11764705882353' />
+          <Cell N='PinY' V='0.5104166666666717' F='Sheet.149!Height*0.44545454545455' />
+          <Cell N='Width' V='0.2083333333333344' F='Sheet.149!Width*0.23529411764706' />
+          <Cell N='Height' V='0.2083333333333312' F='Sheet.149!Height*0.18181818181818' />
+          <Cell N='LocPinX' V='0.1041666666666666' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.1041666666666666' F='Height*0.5' />
+          <Cell N='Angle' V='-1.396592535537253E-14' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0.5' />
+            </Row>
+            <Row T='RelCubBezTo' IX='2'>
+              <Cell N='X' V='0.5' />
+              <Cell N='Y' V='-2.6645352591004E-16' />
+              <Cell N='A' V='0' />
+              <Cell N='B' V='0.224' />
+              <Cell N='C' V='0.224' />
+              <Cell N='D' V='-2.6645352591004E-16' />
+            </Row>
+            <Row T='RelCubBezTo' IX='3'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='0.5' />
+              <Cell N='A' V='0.776' />
+              <Cell N='B' V='-2.6645352591004E-16' />
+              <Cell N='C' V='1' />
+              <Cell N='D' V='0.224' />
+            </Row>
+            <Row T='RelCubBezTo' IX='4'>
+              <Cell N='X' V='0.5' />
+              <Cell N='Y' V='1' />
+              <Cell N='A' V='1' />
+              <Cell N='B' V='0.776' />
+              <Cell N='C' V='0.776' />
+              <Cell N='D' V='1' />
+            </Row>
+            <Row T='RelCubBezTo' IX='5'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0.5' />
+              <Cell N='A' V='0.224' />
+              <Cell N='B' V='1' />
+              <Cell N='C' V='0' />
+              <Cell N='D' V='0.776' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='153' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.2536458333333297' F='Sheet.149!Width*0.28647058823529' />
+          <Cell N='PinY' V='0.5104166666666603' F='Sheet.149!Height*0.44545454545454' />
+          <Cell N='Width' V='0.1177083333333349' F='Sheet.149!Width*0.13294117647059' />
+          <Cell N='Height' V='0.1041666666666667' F='Sheet.149!Height*0.090909090909091' />
+          <Cell N='LocPinX' V='0.05885416666666665' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.0520833333333333' F='Height*0.5' />
+          <Cell N='Angle' V='-1.396592535537253E-14' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='1' />
+            </Row>
+          </Section>
+          <Section N='Geometry' IX='1'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='0' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='154' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.1629687499801651' F='Sheet.149!Width*0.18405882350701' />
+          <Cell N='PinY' V='0.3009374545487176' F='Sheet.149!Height*0.26263632396979' />
+          <Cell N='Width' V='0.1176041666666625' F='Sheet.149!Width*0.13282352941176' />
+          <Cell N='Height' V='0.2939583333333281' F='Sheet.149!Height*0.25654545454545' />
+          <Cell N='LocPinX' V='0.0588020833333333' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.1469791666666667' F='Height*0.5' />
+          <Cell N='Angle' V='-0.0008726646259971666' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineColor' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='MoveTo' IX='1'>
+              <Cell N='X' V='0' F='Width*0' />
+              <Cell N='Y' V='0' F='Height*0' />
+            </Row>
+            <Row T='LineTo' IX='2'>
+              <Cell N='X' V='0.1176041666666666' F='Width*1' />
+              <Cell N='Y' V='0' F='Height*0' />
+            </Row>
+            <Row T='LineTo' IX='3'>
+              <Cell N='X' V='0.1176041666666666' F='Width*1' />
+              <Cell N='Y' V='0.2939583333333333' F='Height*1' />
+            </Row>
+            <Row T='LineTo' IX='4'>
+              <Cell N='X' V='0' F='Width*0' />
+              <Cell N='Y' V='0.2939583333333333' F='Height*1' />
+            </Row>
+            <Row T='LineTo' IX='5'>
+              <Cell N='X' V='0' F='Geometry1.X1' />
+              <Cell N='Y' V='0' F='Geometry1.Y1' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='155' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.6770833333333323' F='Sheet.149!Width*0.76470588235294' />
+          <Cell N='PinY' V='0.5416666666666634' F='Sheet.149!Height*0.47272727272727' />
+          <Cell N='Width' V='0.4166666666666687' F='Sheet.149!Width*0.47058823529412' />
+          <Cell N='Height' V='0.625000000000005' F='Sheet.149!Height*0.54545454545455' />
+          <Cell N='LocPinX' V='0.2083333333333333' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.3125' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='0' />
+            </Row>
+            <Row T='RelLineTo' IX='3'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='4'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='5'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='156' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.6770833333333323' F='Sheet.149!Width*0.76470588235294' />
+          <Cell N='PinY' V='0.6875' F='Sheet.149!Height*0.6' />
+          <Cell N='Width' V='0.4166666666666687' F='Sheet.149!Width*0.47058823529412' />
+          <Cell N='Height' V='0' F='Sheet.149!Height*0' />
+          <Cell N='LocPinX' V='0.2083333333333333' F='Width*0.5' />
+          <Cell N='LocPinY' V='0' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='0' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='157' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.6770833333333323' F='Sheet.149!Width*0.76470588235294' />
+          <Cell N='PinY' V='0.4687500000000009' F='Sheet.149!Height*0.40909090909091' />
+          <Cell N='Width' V='0.4166666666666687' F='Sheet.149!Width*0.47058823529412' />
+          <Cell N='Height' V='0.4583333333333333' F='Sheet.149!Height*0.4' />
+          <Cell N='LocPinX' V='0.2083333333333333' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.2291666666666667' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineColor' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='-1.2111523905002E-16' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='-1.2111523905002E-16' />
+            </Row>
+            <Row T='RelLineTo' IX='3'>
+              <Cell N='X' V='1' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='4'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='5'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='-1.2111523905002E-16' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='158' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.6875' F='Sheet.149!Width*0.77647058823529' />
+          <Cell N='PinY' V='0.4854166666666667' F='Sheet.149!Height*0.42363636363636' />
+          <Cell N='Width' V='0.2506944444444444' F='Sheet.149!Width*0.28313725490196' />
+          <Cell N='Height' V='0.15' F='Sheet.149!Height*0.13090909090909' />
+          <Cell N='LocPinX' V='0.1253472222222222' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.075' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineColor' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Character'>
+            <Row IX='0'>
+              <Cell N='Font' V='Helvetica' />
+              <Cell N='Size' V='0.125' />
+              <Cell N='LangID' V='en-US' />
+            </Row>
+          </Section>
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='MoveTo' IX='1'>
+              <Cell N='X' V='0' F='Width*0' />
+              <Cell N='Y' V='0' F='Height*0' />
+            </Row>
+            <Row T='LineTo' IX='2'>
+              <Cell N='X' V='0.2506944444444444' F='Width*1' />
+              <Cell N='Y' V='0' F='Height*0' />
+            </Row>
+            <Row T='LineTo' IX='3'>
+              <Cell N='X' V='0.2506944444444444' F='Width*1' />
+              <Cell N='Y' V='0.15' F='Height*1' />
+            </Row>
+            <Row T='LineTo' IX='4'>
+              <Cell N='X' V='0' F='Width*0' />
+              <Cell N='Y' V='0.15' F='Height*1' />
+            </Row>
+            <Row T='LineTo' IX='5'>
+              <Cell N='X' V='0' F='Geometry1.X1' />
+              <Cell N='Y' V='0' F='Geometry1.Y1' />
+            </Row>
+          </Section>
+          <Text>
+            <cp IX='0' />Wh
+          </Text>
+        </Shape>
+        <Shape ID='159' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.1562499999999963' F='Sheet.149!Width*0.17647058823529' />
+          <Cell N='PinY' V='0.9635416666666654' F='Sheet.149!Height*0.84090909090909' />
+          <Cell N='Width' V='0' F='Sheet.149!Width*0' />
+          <Cell N='Height' V='0.3645833333333353' F='Sheet.149!Height*0.31818181818182' />
+          <Cell N='LocPinX' V='0' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.1822916666666667' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='0' />
+            </Row>
+          </Section>
+        </Shape>
+        <Shape ID='160' Type='Shape' LineStyle='9' FillStyle='9' TextStyle='9'>
+          <Cell N='PinX' V='0.1562499999999963' F='Sheet.149!Width*0.17647058823529' />
+          <Cell N='PinY' V='0.1822916666666677' F='Sheet.149!Height*0.15909090909091' />
+          <Cell N='Width' V='0' F='Sheet.149!Width*0' />
+          <Cell N='Height' V='0.3645833333333353' F='Sheet.149!Height*0.31818181818182' />
+          <Cell N='LocPinX' V='0' F='Width*0.5' />
+          <Cell N='LocPinY' V='0.1822916666666667' F='Height*0.5' />
+          <Cell N='Angle' V='0' />
+          <Cell N='FlipX' V='0' />
+          <Cell N='FlipY' V='0' />
+          <Cell N='ResizeMode' V='0' />
+          <Cell N='LineWeight' V='0.02083333333333333' />
+          <Cell N='LinePattern' V='1' />
+          <Cell N='FillForegnd' V='1' />
+          <Cell N='FillPattern' V='0' />
+          <Section N='Geometry' IX='0'>
+            <Cell N='NoFill' V='0' />
+            <Cell N='NoLine' V='0' />
+            <Cell N='NoShow' V='0' />
+            <Cell N='NoSnap' V='0' />
+            <Cell N='NoQuickDrag' V='0' />
+            <Row T='RelMoveTo' IX='1'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='1' />
+            </Row>
+            <Row T='RelLineTo' IX='2'>
+              <Cell N='X' V='0' />
+              <Cell N='Y' V='-1.5225915766288E-16' />
+            </Row>
+          </Section>
+        </Shape>
+      </Shapes>
+    </Shape>
+  </Shapes>
+</Shape>

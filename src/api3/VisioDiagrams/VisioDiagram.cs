@@ -1,4 +1,5 @@
-﻿namespace VisioDiagrams
+﻿#pragma warning disable
+namespace VisioDiagrams
 {
     using System.Xml;
     using System.Xml.Linq;
@@ -26,6 +27,7 @@
                 }
             }
         }
+
         public static async Task Explore()
         {
             //var raw = await File.ReadAllTextAsync(path);
@@ -40,6 +42,15 @@
                     // https://learn.microsoft.com/en-us/office/client-developer/visio/how-to-manipulate-the-visio-file-format-programmatically
                     Console.WriteLine("Package part URI: {0}", part.Uri);
                     Console.WriteLine("Content type: {0}", part.ContentType.ToString());
+                    if (part.ContentType.Contains("+xml"))
+                    {
+                        using var s = part.GetStream();
+                        var fn = part.Uri.ToString().Split('/').Last();
+                        var fi = new FileInfo(fn);
+                        using var fs = fi.Open(FileMode.OpenOrCreate);
+                        await s.CopyToAsync(fs);
+                        Console.WriteLine($"File created: {fi.FullName}");
+                    }
                     if (part.ContentType.StartsWith("image/"))
                     {
                         using var s = part.GetStream();
@@ -48,6 +59,10 @@
                         using var fs = fi.Open(FileMode.OpenOrCreate);
                         await s.CopyToAsync(fs);
                         Console.WriteLine($"File created: {fi.FullName}");
+                    }
+                    else if (part.ContentType == "application/vnd.ms-visio.master+xml")
+                    {
+                        await HandleMasterPageAsync(part);
                     }
                 }
 
@@ -80,6 +95,13 @@
                 }
                 var svg = ConvertVisioPageToSvg(path, 1);
             }
+        }
+
+        private static async Task HandleMasterPageAsync(PackagePart part)
+        {
+            using var stream = part.GetStream();
+            var xml = XDocument.Load(stream);
+            //xml.Descendants(part.)
         }
 
         static readonly XNamespace V = "http://schemas.microsoft.com/office/visio/2012/main";
@@ -123,11 +145,7 @@
                     {
                         string tag = cmd.Name.LocalName;
                         // Read all cells in this command into a dictionary
-                        var cells = cmd.Elements(V + "Cell")
-                                       .ToDictionary(
-                                           c => (string)c.Attribute("N"),
-                                           c => (string)c.Attribute("V")
-                                       );
+                        var cells = cmd.Elements(V + "Cell").ToDictionary(c => (string)c.Attribute("N"), c => (string)c.Attribute("V"));
 
                         switch (tag)
                         {

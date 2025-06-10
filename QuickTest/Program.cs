@@ -16,6 +16,7 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-       await VisioDiagram.Explore();
+        //await ShapeToSvg.Execute();
+        await VisioDiagram.Explore();
     }
 }
