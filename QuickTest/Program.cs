@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using Explore.BCL;
+using Explore.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileSystemGlobbing.Internal;
 using Microsoft.Extensions.Primitives;
@@ -16,7 +18,7 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        //await ShapeToSvg.Execute();
-        await VisioDiagram.Explore();
+        ExploreDictionary.Run();
+        ExploreLinq.Run();
     }
 }
