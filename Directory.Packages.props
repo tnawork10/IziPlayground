@@ -140,5 +140,6 @@
   <ItemGroup>
     <PackageVersion Include="System.IO.Packaging" Version="9.0.5" />
     <PackageVersion Include="NetOffice.Visio" Version="1.7.4.11" />
+    <PackageVersion Include="Svg.Skia" Version="3.0.3" />
   </ItemGroup>
 </Project>

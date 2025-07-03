@@ -133,6 +133,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisioDiagrams", "src\api3\V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Library", "tests\Test.Library\Test.Library.csproj", "{FBA2A249-E016-4E43-8C22-316B568B7EBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.SVG", "libs\IziHardGames.SVG\IziHardGames.SVG.csproj", "{C98B57A1-1123-41C1-AA44-E93DC9736482}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -307,6 +309,10 @@ Global
 		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBA2A249-E016-4E43-8C22-316B568B7EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98B57A1-1123-41C1-AA44-E93DC9736482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98B57A1-1123-41C1-AA44-E93DC9736482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98B57A1-1123-41C1-AA44-E93DC9736482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98B57A1-1123-41C1-AA44-E93DC9736482}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -352,6 +358,7 @@ Global
 		{A90FC4E5-6A2C-4EF7-80FA-5AF96CCDE58F} = {E024981C-397A-4226-A176-74E52A7D53B2}
 		{41153C73-7BB0-4432-97B6-82CA35A21FC4} = {1E634FA1-5268-41BC-9C1F-D4034BF1017D}
 		{FBA2A249-E016-4E43-8C22-316B568B7EBF} = {A515F07A-B8A2-4F57-9535-4101217A8E7B}
+		{C98B57A1-1123-41C1-AA44-E93DC9736482} = {0AFC4BFC-AA4C-4D11-A24A-B94925A8DA54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

@@ -15,4 +15,7 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
     <PackageReference Include="Swashbuckle.AspNetCore" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libs\IziHardGames.SVG\IziHardGames.SVG.csproj" />
+  </ItemGroup>
 </Project>
