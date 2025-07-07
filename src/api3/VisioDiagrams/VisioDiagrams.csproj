@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <PackageReference Include="System.IO.Packaging" />
+    <PackageReference Include="Svg" />
+    <PackageReference Include="Svg.Skia" />
     <PackageReference Include="NetOffice.Visio" />
   </ItemGroup>
 

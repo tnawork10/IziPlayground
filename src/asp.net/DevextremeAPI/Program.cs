@@ -45,6 +45,7 @@ namespace DevextremeAPI
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                app.UseDeveloperExceptionPage();
             }
 
             app.UseAuthorization();

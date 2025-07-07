@@ -13,9 +13,8 @@
     <ProjectReference Include="..\EFCore\EFCore.csproj">
       <Project>d88c0b59-2448-4d86-957b-a8ecdd4304ea</Project>
     </ProjectReference>
-    <ProjectReference Include="..\src\api3\VisioDiagrams\VisioDiagrams.csproj" >
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-    </ProjectReference>
+    <ProjectReference Include="..\libs\IziHardGames.SVG\IziHardGames.SVG.csproj" />
+    <ProjectReference Include="..\src\api3\VisioDiagrams\VisioDiagrams.csproj" />
     <ProjectReference Include="..\src\Explore.BCL\Explore.BCL.csproj" />
     <ProjectReference Include="..\src\Explore.Linq\Explore.Linq.csproj" />
     <ProjectReference Include="..\src\IziAsyncEnumerables\IziAsyncEnumerables.csproj">

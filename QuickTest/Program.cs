@@ -5,8 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using Explore.BCL;
-using Explore.Linq;
+using IziHardGames.SVG;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileSystemGlobbing.Internal;
 using Microsoft.Extensions.Primitives;
@@ -18,7 +17,21 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        ExploreLinq.Run();
-        ExploreDictionary.Run();
+        if (false)
+        {
+            await ShapeToSvg.Execute();
+        }
+
+        if (false)
+        {
+            await SvgSplitter.ExecuteTest();
+        }
+
+        if (false)
+        {
+            await VisioDiagram.Explore();
+        }
+
+        await SvgNetSplitter.RunTest();
     }
 }
