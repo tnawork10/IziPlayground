@@ -18,7 +18,7 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        ExploreDictionary.Run();
         ExploreLinq.Run();
+        ExploreDictionary.Run();
     }
 }
