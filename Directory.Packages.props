@@ -10,7 +10,7 @@
     <!--<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">-->
     <!--<PackageVersion Include="EFlogger-For6" Version="0.4.1" />-->
     <!--<PackageVersion Include="EntityFrameworkProfiler" Version="6.0.6047" />-->
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4"/>
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
     <PackageVersion Include="Microsoft.Build" Version="17.10.4" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
     <PackageVersion Include="EFCore.NamingConventions" Version="8.0.3" />
@@ -21,6 +21,7 @@
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.10" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
+    <PackageVersion Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="System.Threading.Tasks.Dataflow" Version="7.0.0" />
@@ -126,20 +127,18 @@
     <PackageVersion Include="JetBrains.dotMemoryUnit" Version="3.2.20220510" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <!--<PackageVersion Include="IziHardGames.Observability" Version="0.0.1"></PackageVersion>-->
   </ItemGroup>
-
   <ItemGroup>
     <PackageVersion Include="Bogus" Version="35.6.3" />
     <PackageVersion Include="LazyCache" Version="2.4.0" />
     <PackageVersion Include="LazyCache.AspNetCore" Version="2.4.0" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageVersion Include="System.IO.Packaging" Version="9.0.5" />
     <PackageVersion Include="NetOffice.Visio" Version="1.7.4.11" />
     <PackageVersion Include="Svg.Skia" Version="3.0.3" />
+    <PackageVersion Include="Svg" Version="3.4.7" />
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@ using F = System.IO.File;
 
 namespace IziHardGames.SVG
 {
+
     public class SvgSplitter
     {
         public static async Task ExecuteTest()

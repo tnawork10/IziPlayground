@@ -15,6 +15,8 @@
     </ProjectReference>
     <ProjectReference Include="..\libs\IziHardGames.SVG\IziHardGames.SVG.csproj" />
     <ProjectReference Include="..\src\api3\VisioDiagrams\VisioDiagrams.csproj" />
+    <ProjectReference Include="..\src\Explore.BCL\Explore.BCL.csproj" />
+    <ProjectReference Include="..\src\Explore.Linq\Explore.Linq.csproj" />
     <ProjectReference Include="..\src\IziAsyncEnumerables\IziAsyncEnumerables.csproj">
       <Project>4d2f16ff-181c-4697-8a75-4213b63f7756</Project>
     </ProjectReference>

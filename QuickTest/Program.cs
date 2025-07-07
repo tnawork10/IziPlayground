@@ -18,11 +18,20 @@ partial class Program
     static async Task Main(string[] args)
     {
         if (false)
+        {
             await ShapeToSvg.Execute();
-
-        await SvgSplitter.ExecuteTest();
+        }
 
         if (false)
+        {
+            await SvgSplitter.ExecuteTest();
+        }
+
+        if (false)
+        {
             await VisioDiagram.Explore();
+        }
+
+        await SvgNetSplitter.RunTest();
     }
 }
