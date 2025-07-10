@@ -1,4 +1,4 @@
-﻿using IziHardGames.TestAppDomain;
+﻿//using IziHardGames.TestAppDomain;
 
 namespace IziHardGames.Domain1
 {
@@ -6,10 +6,11 @@ namespace IziHardGames.Domain1
     {
         public static string Run()
         {
-            var v = new DebugRunMe();
-            var version = v.ReturnVersion();
-            Console.WriteLine(version);
-            return version;
+            //var v = new DebugRunMe();
+            //var version = v.ReturnVersion();
+            //Console.WriteLine(version);
+            //return version;
+            throw new NotImplementedException();
         }
     }
 }

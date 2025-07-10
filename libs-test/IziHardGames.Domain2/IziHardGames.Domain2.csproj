@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <RestoreSources>$(RestoreSources);$(MSBuildThisFileDirectory);$(LOCAL_NUGET_DIR)</RestoreSources>
+    <!--<RestoreSources>$(RestoreSources);$(MSBuildThisFileDirectory);$(LOCAL_NUGET_DIR)</RestoreSources>-->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IziHardGames.TestAppDomain" Version="0.0.2"/>
+    <!--<PackageReference Include="IziHardGames.TestAppDomain" Version="0.0.2"/>-->
   </ItemGroup>
 </Project>
