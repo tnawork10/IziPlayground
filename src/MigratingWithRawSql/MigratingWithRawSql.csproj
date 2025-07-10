@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\EFCore\EFCore.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="sql\insert_migrating.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
