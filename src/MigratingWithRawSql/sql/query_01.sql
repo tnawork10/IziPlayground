@@ -1,1 +1,0 @@
-﻿SELECT DISTINCT "Guid0","Guid1","Int0" FROM "Entities01";

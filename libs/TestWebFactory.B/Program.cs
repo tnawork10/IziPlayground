@@ -1,7 +1,4 @@
-
-using IziHardGames.Playgrounds.ForEfCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace TestWebFactory.B
 {
@@ -39,7 +36,7 @@ namespace TestWebFactory.B
             //var servicesAfterHttpClient = builder.Services.Select(x => x.ServiceType.AssemblyQualifiedName).Aggregate((x, y) => x + Environment.NewLine + y);
             logger.LogInformation("After AddHttpClient():" + Environment.NewLine + servicesAfterHttpClient);
 
-            builder.Services.AddPooledDbContextFactory<PlaygroundDbContext>(x => x.UseNpgsql(cs));
+            //builder.Services.AddPooledDbContextFactory<PlaygroundDbContext>(x => x.UseNpgsql(cs));
             var typesAfterDbContext = builder.Services.Select(x => x.ServiceType).ToArray();
             var diff2 = typesAfterDbContext.Except(typesAfterHttpClient).ToArray();
             var servicesAfterDbContext = diff2.Select(x => x.AssemblyQualifiedName).Aggregate((x, y) => x + Environment.NewLine + y);

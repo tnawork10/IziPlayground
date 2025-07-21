@@ -1,11 +1,3 @@
-
-using IziHardGames.Observing.Tracing;
-using IziHardGames.Playgrounds.ForEfCore;
-using Microsoft.EntityFrameworkCore;
-using OpenTelemetry.Logs;
-using OpenTelemetry.Metrics;
-using OpenTelemetry.Resources;
-using OpenTelemetry.Trace;
 using WebAPI.ActionFilters;
 using WebAPI.Middlewares;
 
@@ -24,7 +16,7 @@ namespace WebAPI
             var cs = $"server={server};uid={uid};pwd={pwd}{(port is null ? string.Empty : portVal)};database=PlaygroundSelfHierarchy";
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddDbContextPool<PlaygroundSelfHierarchyDbContext>(x => x.UseNpgsql(cs));
+            //builder.Services.AddDbContextPool<PlaygroundSelfHierarchyDbContext>(x => x.UseNpgsql(cs));
 
             // Add services to the container.
             builder.Services.AddLazyCache();
@@ -32,10 +24,10 @@ namespace WebAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddOpenTelemetry()
-                .WithLogging(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddOtlpExporter())
-                .WithMetrics(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddAspNetCoreInstrumentation().AddOtlpExporter())
-                .WithTracing(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddAspNetCoreInstrumentation().AddOtlpExporter());
+            //builder.Services.AddOpenTelemetry()
+            //    .WithLogging(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddOtlpExporter())
+            //    .WithMetrics(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddAspNetCoreInstrumentation().AddOtlpExporter())
+            //    .WithTracing(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddAspNetCoreInstrumentation().AddOtlpExporter());
 
             //builder.Services.AddZipkin(new OtlpParams()
             //{

@@ -8,13 +8,15 @@
     <Company>IziHardGames</Company>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
+    <!--<ProjectReference Include="..\..\..\..\IziOpenTelemetry\src\IziTracings\IziTracings.csproj">
       <Project>59df4cff-035e-4548-baad-8b4a7eac4fb4</Project>
-    </ProjectReference>
+    </ProjectReference>-->
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference>Microsoft.EntityFrameworkCore</PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore"></PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL"></PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore"></PackageReference>
   </ItemGroup>
 
 </Project>
