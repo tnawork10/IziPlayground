@@ -7,8 +7,12 @@
     <ProjectGuid>cde5c5a6-0021-4122-90d5-2992787ecb38</ProjectGuid>
     <Author>Tran Ngoc Anh</Author>
     <Company>IziHardGames</Company>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\Collections.Unsafe\Collections.Unsafe.csproj" />
   </ItemGroup>
 </Project>

@@ -11,6 +11,7 @@ namespace FileUploading.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadFoormsCollection(IFormCollection forms)
         {
+            var keys = forms.Keys;
             await Task.CompletedTask;
             return Ok();
         }

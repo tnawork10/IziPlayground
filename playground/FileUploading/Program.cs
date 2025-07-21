@@ -26,6 +26,7 @@ namespace FileUploading
 
             app.UseAuthorization();
 
+            app.UseCors(x => x.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
 
             app.MapControllers();
 

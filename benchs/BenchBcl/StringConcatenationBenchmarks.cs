@@ -2,6 +2,7 @@
 
 namespace BenchBcl
 {
+    [MemoryDiagnoser]
     public class StringConcatenationBenchmarks
     {
         private const string str1 = "Hello";

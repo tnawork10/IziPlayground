@@ -141,6 +141,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileUploading", "FileUpload
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploading", "playground\FileUploading\FileUploading.csproj", "{A92D456D-0374-4080-8F00-C5E5F44918B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections.Unsafe", "libs\Collections.Unsafe\Collections.Unsafe.csproj", "{D30C610B-D5B4-4890-AAB0-0DB503E8D114}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -323,6 +325,10 @@ Global
 		{A92D456D-0374-4080-8F00-C5E5F44918B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92D456D-0374-4080-8F00-C5E5F44918B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92D456D-0374-4080-8F00-C5E5F44918B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30C610B-D5B4-4890-AAB0-0DB503E8D114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30C610B-D5B4-4890-AAB0-0DB503E8D114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30C610B-D5B4-4890-AAB0-0DB503E8D114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30C610B-D5B4-4890-AAB0-0DB503E8D114}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -372,6 +378,7 @@ Global
 		{54E140CC-A260-EA4A-D489-A6079A41A0DB} = {047395F6-9159-4E9F-AF20-9409C970B5D1}
 		{B286B636-7733-49C1-9565-3D1FBD7CD541} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A92D456D-0374-4080-8F00-C5E5F44918B5} = {B286B636-7733-49C1-9565-3D1FBD7CD541}
+		{D30C610B-D5B4-4890-AAB0-0DB503E8D114} = {0AFC4BFC-AA4C-4D11-A24A-B94925A8DA54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

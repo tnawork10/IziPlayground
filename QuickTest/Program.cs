@@ -17,21 +17,12 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        if (false)
-        {
-            await ShapeToSvg.Execute();
-        }
 
-        if (false)
-        {
-            await SvgSplitter.ExecuteTest();
-        }
+        var hs = new HashSet<int>();
 
-        if (false)
-        {
-            await VisioDiagram.Explore();
-        }
-
-        await SvgNetSplitter.RunTest();
+        hs.Add(1);
+        hs.Add(2);
+        hs.Add(1);
+        hs.Add(1);
     }
 }
