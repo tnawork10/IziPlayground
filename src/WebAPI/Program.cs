@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+using Scalar.AspNetCore;
 using WebAPI.ActionFilters;
 using WebAPI.Middlewares;
 
@@ -23,7 +25,7 @@ namespace WebAPI
             builder.Services.AddControllers(x => x.Filters.Add<DisposableActionFilter>());
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddOpenApi();
             //builder.Services.AddOpenTelemetry()
             //    .WithLogging(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddOtlpExporter())
             //    .WithMetrics(x => x.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("Playground WebApi")).AddAspNetCoreInstrumentation().AddOtlpExporter())
@@ -41,8 +43,8 @@ namespace WebAPI
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.MapOpenApi();
+                app.MapScalarApiReference();
             }
 
             app.UseMiddleware<MiddlewareExplorer>();

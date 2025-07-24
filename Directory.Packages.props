@@ -105,7 +105,7 @@
   <ItemGroup>
     <PackageVersion Include="Microsoft.OpenApi" Version="1.6.22" />
     <PackageVersion Include="Microsoft.OpenApi.Readers" Version="1.6.22" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0" />
     <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="9.0.0" />
     <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
@@ -144,9 +144,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="System.IO.Packaging" Version="9.0.5" />
+    <PackageVersion Include="DocumentFormat.OpenXml" Version="2.13.1" />
     <PackageVersion Include="NetOffice.Visio" Version="1.7.4.11" />
     <PackageVersion Include="Svg.Skia" Version="3.0.3" />
     <PackageVersion Include="Svg" Version="3.4.7" />
+    <PackageVersion Include="Aspose.Diagram" Version="25.7.0" />
   </ItemGroup>
 
   <ItemGroup>

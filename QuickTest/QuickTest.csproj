@@ -10,6 +10,7 @@
     <Author>Tran Ngoc Anh</Author>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\libs\IziHardGames.Microsoft.Word\IziHardGames.Microsoft.Word.csproj" />
     <ProjectReference Include="..\libs\IziHardGames.SVG\IziHardGames.SVG.csproj" />
     <ProjectReference Include="..\src\api3\VisioDiagrams\VisioDiagrams.csproj" />
     <ProjectReference Include="..\src\Explore.BCL\Explore.BCL.csproj" />

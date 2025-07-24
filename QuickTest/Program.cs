@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using IziHardGames.Microsoft.Word;
 using IziHardGames.SVG;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileSystemGlobbing.Internal;
@@ -17,12 +18,7 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-
-        var hs = new HashSet<int>();
-
-        hs.Add(1);
-        hs.Add(2);
-        hs.Add(1);
-        hs.Add(1);
+        var word = new MSWord();
+        await word.CreateWord();
     }
 }
