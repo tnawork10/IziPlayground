@@ -167,6 +167,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aspire.WebApi.ServiceDefaul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.Microsoft.Word", "libs\IziHardGames.Microsoft.Word\IziHardGames.Microsoft.Word.csproj", "{D9CEF18C-2032-4FEE-AA25-2090514E5894}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDb", "MongoDb", "{6B7FB212-581D-4742-BAF7-A2B249513DDD}"
+	ProjectSection(SolutionItems) = preProject
+		MongoDb\docker-compose.mongodb.yml = MongoDb\docker-compose.mongodb.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IziHardGames.MongoDb.Explore", "MongoDb\IziHardGames.MongoDb.Explore\IziHardGames.MongoDb.Explore.csproj", "{83C53D89-72CC-4D63-9797-D0BE7D5C0C1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mongo.WebAPI", "MongoDb\Mongo.WebAPI\Mongo.WebAPI.csproj", "{02AB737F-DCEE-4A74-B8A6-5DBC562EC6EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -373,6 +382,14 @@ Global
 		{D9CEF18C-2032-4FEE-AA25-2090514E5894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9CEF18C-2032-4FEE-AA25-2090514E5894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9CEF18C-2032-4FEE-AA25-2090514E5894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C53D89-72CC-4D63-9797-D0BE7D5C0C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C53D89-72CC-4D63-9797-D0BE7D5C0C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C53D89-72CC-4D63-9797-D0BE7D5C0C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C53D89-72CC-4D63-9797-D0BE7D5C0C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02AB737F-DCEE-4A74-B8A6-5DBC562EC6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AB737F-DCEE-4A74-B8A6-5DBC562EC6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AB737F-DCEE-4A74-B8A6-5DBC562EC6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AB737F-DCEE-4A74-B8A6-5DBC562EC6EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -435,6 +452,8 @@ Global
 		{E10C6020-7A94-41EA-B76A-CDCD14D8D512} = {41D8C5A4-6853-4F4F-9CDD-FE0CCCFED409}
 		{C35BD8CD-CA89-6C1C-F3D7-12BE8D2FB0C5} = {41D8C5A4-6853-4F4F-9CDD-FE0CCCFED409}
 		{D9CEF18C-2032-4FEE-AA25-2090514E5894} = {1E634FA1-5268-41BC-9C1F-D4034BF1017D}
+		{83C53D89-72CC-4D63-9797-D0BE7D5C0C1D} = {6B7FB212-581D-4742-BAF7-A2B249513DDD}
+		{02AB737F-DCEE-4A74-B8A6-5DBC562EC6EA} = {6B7FB212-581D-4742-BAF7-A2B249513DDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0BDCAA0-811B-435D-B0A5-CE8EE24D7144}

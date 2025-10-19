@@ -1,6 +1,7 @@
 using System.Collections.Concurrent;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
@@ -18,7 +19,6 @@ partial class Program
 {
     static async Task Main(string[] args)
     {
-        var word = new MSWord();
-        await word.CreateWord();
+        await Linq.Run();
     }
 }
