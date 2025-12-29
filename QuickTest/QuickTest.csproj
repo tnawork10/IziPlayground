@@ -8,6 +8,8 @@
     <Company>IziHardGames</Company>
     <RootNamespace>IziHardGames.QuickTests</RootNamespace>
     <Author>Tran Ngoc Anh</Author>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>AnyCPU;x86;x64</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\libs\IziHardGames.Microsoft.Word\IziHardGames.Microsoft.Word.csproj" />

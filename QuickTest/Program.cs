@@ -16,9 +16,9 @@ namespace QuickTest;
 
 partial class Program
 {
-    static async Task Main(string[] args)
+    static unsafe async Task Main(string[] args)
     {
-        var word = new MSWord();
-        await word.CreateWord();
+        Console.WriteLine(JsonSerializer.Serialize(TimeSpan.FromDays(35)));
+
     }
 }
