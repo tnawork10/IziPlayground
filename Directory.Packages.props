@@ -114,7 +114,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.7" NoWarn="NU1605" />
     <PackageVersion Include="Microsoft.Identity.Web" Version="2.15.2" />
     <PackageVersion Include="Microsoft.Identity.Web.DownstreamApi" Version="2.15.2" />
-    <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="OpenTelemetry" Version="1.9.0" />
@@ -132,7 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="JetBrains.dotMemoryUnit" Version="3.2.20220510" />
-
   </ItemGroup>
   <ItemGroup>
     <!--<PackageVersion Include="IziHardGames.Observability" Version="0.0.1"></PackageVersion>-->
@@ -150,8 +149,10 @@
     <PackageVersion Include="Svg" Version="3.4.7" />
     <PackageVersion Include="Aspose.Diagram" Version="25.7.0" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Include="MongoDB.Driver" Version="3.4.2" />
   </ItemGroup>
 </Project>
